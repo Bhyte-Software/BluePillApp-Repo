@@ -11,6 +11,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -153,6 +162,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.2.0.709249"
         },
@@ -174,6 +184,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -316,6 +335,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.2.0.709249"
         },
@@ -337,6 +357,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -479,6 +508,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.2.0.709249"
         },
@@ -500,6 +530,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -642,6 +681,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.2.0.709249"
         },
@@ -700,6 +740,21 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
+      "type": "package",
+      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/BottomBar.Droid.dll",
+        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
+        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
+        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
+        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
+        "thrivegmbh.bottomnavigationbar.xf.nuspec"
       ]
     },
     "Xamarin.Essentials/1.2.0": {
@@ -1000,6 +1055,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "BluePillApp >= 1.0.0",
+      "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "Xamarin.Essentials >= 1.2.0",
       "Xamarin.Forms >= 4.2.0.709249"
     ]
@@ -1046,6 +1102,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "ThriveGmbH.BottomNavigationBar.XF": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.2.0, )"

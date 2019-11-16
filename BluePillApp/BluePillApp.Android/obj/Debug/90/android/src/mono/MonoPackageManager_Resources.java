@@ -2,7 +2,13 @@ package mono;
 public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "BluePillApp.Android.dll" comes first in this list. */
+		"BluePillApp.Android.dll",
+		"BluePillApp.dll",
+		"BottomBar.Droid.dll",
+		"BottomBar.XamarinForms.dll",
+		"BottomNavigationBar.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

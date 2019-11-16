@@ -35,6 +35,15 @@
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -256,6 +265,21 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
+      "type": "package",
+      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/BottomBar.Droid.dll",
+        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
+        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
+        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
+        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
+        "thrivegmbh.bottomnavigationbar.xf.nuspec"
       ]
     },
     "Xamarin.Essentials/1.2.0": {
@@ -551,6 +575,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "Xamarin.Essentials >= 1.2.0",
       "Xamarin.Forms >= 4.2.0.709249"
     ]
@@ -605,6 +630,10 @@
             "version": "[2.0.3, )",
             "autoReferenced": true
           },
+          "ThriveGmbH.BottomNavigationBar.XF": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.2.0, )"
@@ -627,5 +656,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ThriveGmbH.BottomNavigationBar.XF 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ThriveGmbH.BottomNavigationBar.XF",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

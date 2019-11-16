@@ -1,16 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="BluePillApp.MainPage">
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+       xmlns:local="clr-namespace:BluePillApp"
+       xmlns:views="clr-namespace:BluePillApp.Views"
+       xmlns:bottomBar="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       x:Class="BluePillApp.MainPage"
+       Shell.NavBarIsVisible="False">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!--TabBar Styles and Resources-->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FreeStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#f7f7f7" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#999999"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#61c9f7"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
 
-</ContentPage>
+    
+    <!--BluePill Pages-->
+    <TabBar Style="{StaticResource FreeStyle}">
+        <!--TeleMED Tab-->
+        <Tab Icon="telemedicineIcon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:TelemedicineMainPage}"/>
+        </Tab>
+        
+        <!--FlemingTab-->
+        <Tab Icon="chatbotIcon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ChatbotPage}"/>
+        </Tab>
+        
+        <!--FirstAid Tab-->
+        <Tab Icon="firstaidIcon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:FirstAidPage}"/>
+        </Tab>
+        
+        <!--User Profile Tab-->
+        <Tab Icon="profileIcon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:UserProfilePage}"/>
+        </Tab>
+    </TabBar>
+</Shell>
