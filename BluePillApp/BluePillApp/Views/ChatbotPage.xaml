@@ -3,13 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:BluePillApp.Controls"
+             xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.ChatbotPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is the chatbot page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--Chat Views-->
+        
+        <!--Chat Messages Area-->
+        
+        <!--A simple separater-->
+        <BoxView BackgroundColor="LightGray"
+                 HorizontalOptions="FillAndExpand"
+                 Grid.Row="2"/>
+        
+        <!--Chat Entry and Send Button-->
+        <StackLayout Orientation="Horizontal" Margin="0" Grid.Row="3" Padding="5,10,10,10">
+            <renderers:RoundedEntry Placeholder="Type your message"
+                                    CornerRadius="30"
+                                    BackColor="White"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="#999999"
+                                    BorderWidth="5"
+                                    FontSize="14"
+                                    PlaceholderColor="#b3b3b3"
+                                    WidthRequest="280"/>
+            
+            <Frame BackgroundColor="#0f8df4"
+                   CornerRadius="100"
+                   HeightRequest="9"
+                   WidthRequest="9"
+                   HorizontalOptions="EndAndExpand"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <!--Chatbot Header and Back Button-->
+        <Frame BackgroundColor="#f7f7f7" Grid.Row="0" HasShadow="True">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="back">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Image/>
+                
+                <Label Text="Fleming"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>
