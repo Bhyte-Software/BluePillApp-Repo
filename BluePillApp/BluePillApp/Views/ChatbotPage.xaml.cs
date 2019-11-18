@@ -15,6 +15,13 @@ namespace BluePillApp.Views
         public ChatbotPage()
         {
             InitializeComponent();
+
+            Shell.SetTabBarIsVisible(this, false);
+        }
+
+        private async void BacktoMain_Button(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

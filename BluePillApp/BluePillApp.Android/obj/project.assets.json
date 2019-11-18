@@ -841,13 +841,44 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.PancakeView/1.3.6": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.6.0.220655"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Xamarin.Forms.PancakeView.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Xamarin.Forms.PancakeView.dll": {}
+        }
+      },
+      "XamEffects/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.77107"
+        },
+        "compile": {
+          "lib/MonoAndroid/XamEffects.Droid.dll": {},
+          "lib/MonoAndroid/XamEffects.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/XamEffects.Droid.dll": {},
+          "lib/MonoAndroid/XamEffects.dll": {}
+        }
+      },
       "BluePillApp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "XamEffects": "1.6.3",
           "Xamarin.Essentials": "1.2.0",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "Xamarin.Forms.PancakeView": "1.3.6"
         },
         "compile": {
           "bin/placeholder/BluePillApp.dll": {}
@@ -1991,6 +2022,49 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.PancakeView/1.3.6": {
+      "sha512": "XKP+Fu+xyleh5xTX0N4QhPqP+vae3jjlO50qqu3D4vHa7zSb9kzKKs2gS5Lk4YloD8ZD1D/F7Vg9BakPt8VeDA==",
+      "type": "package",
+      "path": "xamarin.forms.pancakeview/1.3.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid81/Xamarin.Forms.PancakeView.dll",
+        "lib/monoandroid90/Xamarin.Forms.PancakeView.dll",
+        "lib/netstandard1.0/Xamarin.Forms.PancakeView.dll",
+        "lib/netstandard2.0/Xamarin.Forms.PancakeView.dll",
+        "lib/uap10.0.16299/Xamarin.Forms.PancakeView.dll",
+        "lib/uap10.0.16299/Xamarin.Forms.PancakeView.pri",
+        "lib/xamarinios10/Xamarin.Forms.PancakeView.dll",
+        "xamarin.forms.pancakeview.1.3.6.nupkg.sha512",
+        "xamarin.forms.pancakeview.nuspec"
+      ]
+    },
+    "XamEffects/1.6.3": {
+      "sha512": "XcoxG/ugnmrh+j7q0dhFaU8ouUIIFrBwJvc0FtXrhusvSNov5L8gtynf0hfiu3Ey1Z3R39J1qp8tYCovhuJFRQ==",
+      "type": "package",
+      "path": "xameffects/1.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/XamEffects.Droid.dll",
+        "lib/MonoAndroid/XamEffects.Droid.pdb",
+        "lib/MonoAndroid/XamEffects.dll",
+        "lib/MonoAndroid/XamEffects.pdb",
+        "lib/MonoTouch/XamEffects.dll",
+        "lib/MonoTouch/XamEffects.iOS.dll",
+        "lib/MonoTouch/XamEffects.iOS.pdb",
+        "lib/MonoTouch/XamEffects.pdb",
+        "lib/Xamarin.IOS/XamEffects.dll",
+        "lib/Xamarin.IOS/XamEffects.iOS.dll",
+        "lib/Xamarin.IOS/XamEffects.iOS.pdb",
+        "lib/Xamarin.IOS/XamEffects.pdb",
+        "lib/netstandard1.0/XamEffects.dll",
+        "lib/netstandard1.0/XamEffects.pdb",
+        "xameffects.1.6.3.nupkg.sha512",
+        "xameffects.nuspec"
+      ]
+    },
     "BluePillApp/1.0.0": {
       "type": "project",
       "path": "../BluePillApp/BluePillApp.csproj",
@@ -2001,9 +2075,11 @@
     "MonoAndroid,Version=v9.0": [
       "BluePillApp >= 1.0.0",
       "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
+      "XamEffects >= 1.6.3",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
       "Xamarin.Essentials >= 1.2.0",
-      "Xamarin.Forms >= 4.2.0.709249"
+      "Xamarin.Forms >= 4.2.0.709249",
+      "Xamarin.Forms.PancakeView >= 1.3.6"
     ]
   },
   "packageFolders": {
@@ -2052,6 +2128,10 @@
             "target": "Package",
             "version": "[1.0.2, )"
           },
+          "XamEffects": {
+            "target": "Package",
+            "version": "[1.6.3, )"
+          },
           "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",
             "version": "[28.0.0.1, )"
@@ -2063,6 +2143,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.2.0.709249, )"
+          },
+          "Xamarin.Forms.PancakeView": {
+            "target": "Package",
+            "version": "[1.3.6, )"
           }
         }
       }

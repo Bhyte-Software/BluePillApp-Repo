@@ -28,6 +28,12 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
         {
             base.OnElementChanged(e);
 
+            //This sets the Entry text to center align vertically
+            if (this.Control != null)
+            {
+                this.Control.Gravity = GravityFlags.CenterVertical;
+            }
+
             if (e.NewElement != null)
             {
                 var view = (RoundedEntry)Element;
