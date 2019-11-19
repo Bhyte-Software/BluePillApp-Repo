@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="AndroidCustomRenderers\FontAwesomeIconRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\RoundedEntryRenderer.cs" />
+    <Compile Include="AndroidCustomRenderers\CustomShellRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

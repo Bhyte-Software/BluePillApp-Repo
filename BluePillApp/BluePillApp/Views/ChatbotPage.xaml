@@ -12,6 +12,12 @@
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.ChatbotPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:TemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid RowSpacing="0" ColumnSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,11 +25,19 @@
             <RowDefinition Height="1"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <!--Chat Views-->
         
         <!--Chat Messages Area-->
-        
+        <ListView Grid.Row="1" 
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding Messages}" 
+                 Margin="0" 
+                 HasUnevenRows="True" 
+                 VerticalOptions="FillAndExpand" 
+                 SeparatorColor="Transparent" >
+        </ListView>
+
         <!--A simple separater-->
         <BoxView BackgroundColor="LightGray"
                  HorizontalOptions="FillAndExpand"
@@ -36,7 +50,9 @@
                      Padding="5,10,10,10">
             
             <!--Chat Entry-->
-            <renderers:RoundedEntry Placeholder="Type your message"
+            <renderers:RoundedEntry Text="{Binding TextToSend}" 
+                                    x:Name="ChatEntry"
+                                    Placeholder="Type your message"
                                     CornerRadius="30"
                                     BackColor="White"
                                     BackgroundColor="Transparent"
@@ -55,7 +71,7 @@
                                  xamEffects:TouchEffect.Color="White">
 
                 <pancake:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer/>
+                    <TapGestureRecognizer Command="{Binding SendCommand}"/>
                 </pancake:PancakeView.GestureRecognizers>
 
                 <Image Source="sendarrow1.png"
@@ -79,7 +95,7 @@
                                            TextColor="Black"
                                            FontSize="20"
                                            VerticalTextAlignment="Center"
-                                           Margin="10,0,0,0">
+                                           Margin="15,0,0,0">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="BacktoMain_Button"/>
                     </Label.GestureRecognizers>
@@ -94,11 +110,11 @@
                            IsClippedToBounds="True"
                            HeightRequest="40"
                            WidthRequest="40">
-                    
+
                         <Image HorizontalOptions="Center"
                                VerticalOptions="Center"/>
                     </Frame>
-                
+
                     <!--Fleming Text-->
                     <Label Text="Fleming"
                            TextColor="Black"

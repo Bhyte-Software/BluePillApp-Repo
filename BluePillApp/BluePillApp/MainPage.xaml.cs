@@ -1,4 +1,5 @@
-﻿using BottomBar.XamarinForms;
+﻿using BluePillApp.CustomRenderers;
+using BottomBar.XamarinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ namespace BluePillApp
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : Shell
+    public partial class MainPage : DropshadowShell
     {
         public MainPage()
         {

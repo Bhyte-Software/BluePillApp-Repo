@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BluePillApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,23 @@ namespace BluePillApp.Views
         {
             InitializeComponent();
 
+            BindingContext = new ChatbotPageViewModel();
+
+            //Sets the top tab bar invisible
             Shell.SetTabBarIsVisible(this, false);
         }
 
-        private async void BacktoMain_Button(object sender, EventArgs e)
+        private void BacktoMain_Button(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            TabBar bar = Shell.Current.Items[0] as TabBar;
+
+            //Select the first Tab
+            bar.CurrentItem = bar.Items[0];
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -11,8 +11,11 @@ namespace BluePillApp
         {
             InitializeComponent();
 
-            MainPage = new ChatbotPage();
+            MainPage = new MainPage();
         }
+
+        //String for message the user
+        public static string User = "User";
 
         protected override void OnStart()
         {
