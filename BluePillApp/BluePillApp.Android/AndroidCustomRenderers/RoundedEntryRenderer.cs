@@ -22,9 +22,9 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
 {
     [DesignTimeVisible(true)]
     [Obsolete]
-    public class RoundedEntryRenderer : EntryRenderer
+    public class RoundedEntryRenderer : EditorRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);
 

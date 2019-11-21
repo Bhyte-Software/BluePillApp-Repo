@@ -60,19 +60,17 @@
                                     BorderWidth="5"
                                     FontSize="16"
                                     PlaceholderColor="#b3b3b3"
+                                    Keyboard="Chat"
                                     WidthRequest="280"/>
             
             <!--Send Button-->
             <pancake:PancakeView BackgroundColor="#0f8df4"
                                  CornerRadius="100"
+                                 xamEffects:TouchEffect.Color="White"
+                                 xamEffects:Commands.Tap="{Binding SendCommand}"
                                  HeightRequest="47"
                                  WidthRequest="47"
-                                 HorizontalOptions="EndAndExpand"
-                                 xamEffects:TouchEffect.Color="White">
-
-                <pancake:PancakeView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SendCommand}"/>
-                </pancake:PancakeView.GestureRecognizers>
+                                 HorizontalOptions="EndAndExpand">
 
                 <Image Source="sendarrow1.png"
                        HeightRequest="30"

@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[1.0.2, )"
             },
+            "UrhoSharp.Forms": {
+              "target": "Package",
+              "version": "[1.9.67, )"
+            },
             "XamEffects": {
               "target": "Package",
               "version": "[1.6.3, )"

@@ -7,11 +7,11 @@
           mc:Ignorable="d"
           x:Class="BluePillApp.Controls.OutgoingMessageItemControl">
 
-    <pancake:PancakeView BackgroundColor="#999999"
+    <pancake:PancakeView BackgroundColor="#CCCCCC"
                          Padding="15"
                          HasShadow="false"
                          Margin="80,10,10,10"
-                         CornerRadius="50,50,50,0"
+                         CornerRadius="20,20,20,0"
                          HorizontalOptions="EndAndExpand">
         
         <Label Text="{Binding Text}"

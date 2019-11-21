@@ -9,6 +9,8 @@ public class MonoPackageManager_Resources {
 		"BottomNavigationBar.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Urho.Droid.SdlBinding.dll",
+		"UrhoSharp.Forms.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

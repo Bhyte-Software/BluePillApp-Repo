@@ -40,7 +40,6 @@ namespace BluePillApp.ViewModels
         {
             Messages.Add(new ChatMessageModel() { Text = "Hi" });
             Messages.Add(new ChatMessageModel() { Text = "How are you?" });
-            Messages.Add(new ChatMessageModel() { Text = "Im good", User = App.User });
 
             SendCommand = new RelayCommand(Send);
         }
@@ -54,7 +53,11 @@ namespace BluePillApp.ViewModels
             {
                 //This adds the following to the messages collection
                 Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User});
-                TextToSend = string.Empty;
+
+                if(TextToSend == "Hey")
+                {
+                    Messages.Add(new ChatMessageModel() { Text = "Hey yourself"});
+                }
             }
         }
     }

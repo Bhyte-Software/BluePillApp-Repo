@@ -52,6 +52,30 @@
           "lib/MonoAndroid10/BottomBar.XamarinForms.dll": {}
         }
       },
+      "UrhoSharp.Forms/1.9.67": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.3.0.967583"
+        },
+        "compile": {
+          "lib/monoandroid81/Urho.Droid.SdlBinding.dll": {},
+          "lib/monoandroid81/UrhoSharp.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid81/Urho.Droid.SdlBinding.dll": {},
+          "lib/monoandroid81/UrhoSharp.Forms.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win10-x64/native/mono-urho.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/mono-urho.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
       "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
         "type": "package",
         "dependencies": {
@@ -875,6 +899,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "UrhoSharp.Forms": "1.9.67",
           "XamEffects": "1.6.3",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.2.0.709249",
@@ -988,6 +1013,38 @@
         "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
         "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
         "thrivegmbh.bottomnavigationbar.xf.nuspec"
+      ]
+    },
+    "UrhoSharp.Forms/1.9.67": {
+      "sha512": "rN6dKazZKFKDAslYwH1MRoBs6CZqivC32nkMaLfgQN23J+jTnt9ADx7jVAeQxyTrKkqgyDn1cv7pbtuWw4q7/w==",
+      "type": "package",
+      "path": "urhosharp.forms/1.9.67",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/uap10.0.16299/UrhoSharp.Forms.targets",
+        "build/xamarin.ios10/UrhoSharp.Forms.targets",
+        "lib/Xamarin.iOS10/UrhoSharp.Forms.XML",
+        "lib/Xamarin.iOS10/UrhoSharp.Forms.dll",
+        "lib/monoandroid81/Urho.Droid.SdlBinding.dll",
+        "lib/monoandroid81/UrhoSharp.Forms.XML",
+        "lib/monoandroid81/UrhoSharp.Forms.dll",
+        "lib/netstandard2.0/UrhoSharp.Forms.XML",
+        "lib/netstandard2.0/UrhoSharp.Forms.dll",
+        "lib/portable-net45 win8 wpa81/UrhoSharp.Forms.XML",
+        "lib/portable-net45 win8 wpa81/UrhoSharp.Forms.dll",
+        "lib/uap10.0.16299/UrhoSharp.Forms.XML",
+        "lib/uap10.0.16299/UrhoSharp.Forms.dll",
+        "native/Android/arm64-v8a/libmono-urho.so",
+        "native/Android/armeabi-v7a/libmono-urho.so",
+        "native/Android/armeabi/libmono-urho.so",
+        "native/Android/x86/libmono-urho.so",
+        "native/Android/x86_64/libmono-urho.so",
+        "native/CoreData.pak",
+        "runtimes/win10-x64/native/mono-urho.dll",
+        "runtimes/win10-x86/native/mono-urho.dll",
+        "urhosharp.forms.1.9.67.nupkg.sha512",
+        "urhosharp.forms.nuspec"
       ]
     },
     "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
@@ -2075,6 +2132,7 @@
     "MonoAndroid,Version=v9.0": [
       "BluePillApp >= 1.0.0",
       "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
+      "UrhoSharp.Forms >= 1.9.67",
       "XamEffects >= 1.6.3",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
       "Xamarin.Essentials >= 1.2.0",
@@ -2127,6 +2185,10 @@
           "ThriveGmbH.BottomNavigationBar.XF": {
             "target": "Package",
             "version": "[1.0.2, )"
+          },
+          "UrhoSharp.Forms": {
+            "target": "Package",
+            "version": "[1.9.67, )"
           },
           "XamEffects": {
             "target": "Package",

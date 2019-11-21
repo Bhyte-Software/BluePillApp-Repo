@@ -1,6 +1,8 @@
 BottomBar.Droid
 BottomNavigationBar
 FormsViewGroup
+Urho.Droid.SdlBinding
+UrhoSharp.Forms
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

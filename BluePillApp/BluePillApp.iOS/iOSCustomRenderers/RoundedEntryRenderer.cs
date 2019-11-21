@@ -16,11 +16,11 @@ namespace BluePillApp.iOS.iOSCustomRenderers
 {
     [DesignTimeVisible(true)]
     [Obsolete]
-    public class RoundedEntryRenderer : EntryRenderer
+    public class RoundedEntryRenderer : EditorRenderer
     {
         NSObject _keyboardShowObserver;
         NSObject _keyboardHideObserver;
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);
 
@@ -28,8 +28,8 @@ namespace BluePillApp.iOS.iOSCustomRenderers
             {
                 var view = (RoundedEntry)Element;
 
-                Control.LeftView = new UIView(new CGRect(0f, 0f, 9f, 20f));
-                Control.LeftViewMode = UITextFieldViewMode.Always;
+                //Control.LeftView = new UIView(new CGRect(0f, 0f, 9f, 20f));
+                //Control.LeftViewMode = UITextFieldViewMode.Always;
 
                 Control.KeyboardAppearance = UIKeyboardAppearance.Dark;
                 Control.ReturnKeyType = UIReturnKeyType.Done;
@@ -46,6 +46,12 @@ namespace BluePillApp.iOS.iOSCustomRenderers
             {
                 UnregisterForKeyboardNotifications();
             }
+
+            if (Control != null)
+            {
+                Control.ScrollEnabled = false;
+            }
+                
 
             void RegisterForKeyboardNotifications()
             {
