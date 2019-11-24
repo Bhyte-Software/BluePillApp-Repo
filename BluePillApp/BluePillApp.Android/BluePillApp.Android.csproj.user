@@ -4,5 +4,6 @@
     <SelectedDevice>Samsung SM-G935S</SelectedDevice>
     <DefaultDevice>marshdevice</DefaultDevice>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

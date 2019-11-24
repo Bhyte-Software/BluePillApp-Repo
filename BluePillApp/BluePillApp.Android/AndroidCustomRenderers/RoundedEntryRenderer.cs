@@ -28,10 +28,13 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
         {
             base.OnElementChanged(e);
 
-            //This sets the Entry text to center align vertically
             if (this.Control != null)
             {
+                //This sets the Entry text to center align vertically
                 this.Control.Gravity = GravityFlags.CenterVertical;
+
+                //This sets the maximum number of lines in the Entry, therefore setting the max height
+                Control.SetMaxLines(5);
             }
 
             if (e.NewElement != null)

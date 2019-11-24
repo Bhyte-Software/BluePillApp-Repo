@@ -28,6 +28,11 @@ namespace BluePillApp.ViewModels
         public string TextToSend { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public System.Action RefreshScrollDown;
+
+        /// <summary>
         /// A command for sending the users messages
         /// </summary>
         public ICommand SendCommand { get; set; }
@@ -53,11 +58,7 @@ namespace BluePillApp.ViewModels
             {
                 //This adds the following to the messages collection
                 Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User});
-
-                if(TextToSend == "Hey")
-                {
-                    Messages.Add(new ChatMessageModel() { Text = "Hey yourself"});
-                }
+                Messages.Add(new ChatMessageModel() { Text = "Yes"});
             }
         }
     }

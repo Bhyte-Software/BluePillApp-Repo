@@ -29,19 +29,22 @@
         <!--Chat Views-->
         
         <!--Chat Messages Area-->
-        <ListView Grid.Row="1" 
-                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
-                 ItemsSource="{Binding Messages}" 
-                 Margin="0" 
-                 HasUnevenRows="True" 
-                 VerticalOptions="FillAndExpand" 
-                 SeparatorColor="Transparent" >
-        </ListView>
+        <renderers:AutoScrollListView x:Name="messagesListView" 
+                  Grid.Row="1" 
+                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                  ItemsSource="{Binding Messages}" 
+                  Margin="0" 
+                  HasUnevenRows="True" 
+                  VerticalOptions="FillAndExpand" 
+                  SeparatorColor="Transparent"
+                  SelectionMode="None">
+        </renderers:AutoScrollListView>
 
         <!--A simple separater-->
         <BoxView BackgroundColor="LightGray"
                  HorizontalOptions="FillAndExpand"
                  Grid.Row="2"/>
+        
         
         <!--Chat Entry and Send Button-->
         <StackLayout Orientation="Horizontal" 
@@ -64,13 +67,15 @@
                                     WidthRequest="280"/>
             
             <!--Send Button-->
-            <pancake:PancakeView BackgroundColor="#0f8df4"
+            <pancake:PancakeView x:Name="sendBtn" 
+                                 BackgroundColor="#0f8df4"
                                  CornerRadius="100"
                                  xamEffects:TouchEffect.Color="White"
                                  xamEffects:Commands.Tap="{Binding SendCommand}"
                                  HeightRequest="47"
                                  WidthRequest="47"
-                                 HorizontalOptions="EndAndExpand">
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center">
 
                 <Image Source="sendarrow1.png"
                        HeightRequest="30"

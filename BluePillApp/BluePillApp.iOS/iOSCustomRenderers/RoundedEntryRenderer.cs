@@ -51,7 +51,14 @@ namespace BluePillApp.iOS.iOSCustomRenderers
             {
                 Control.ScrollEnabled = false;
             }
-                
+
+            //Sets maximum number of lines *Not too sure about this one*
+            CGSize size = Control.Text.StringSize(Control.Font, Control.Frame.Size, UILineBreakMode.WordWrap);
+            int numLines = (int)(size.Height / Control.Font.LineHeight);
+            if (numLines >= 5)
+            {
+                Control.ScrollEnabled = true;
+            }
 
             void RegisterForKeyboardNotifications()
             {

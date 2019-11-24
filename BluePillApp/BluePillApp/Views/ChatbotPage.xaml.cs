@@ -13,11 +13,13 @@ namespace BluePillApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChatbotPage : ContentPage
     {
+        ChatbotPageViewModel chatbotpageVM = new ChatbotPageViewModel();
+
         public ChatbotPage()
         {
             InitializeComponent();
 
-            BindingContext = new ChatbotPageViewModel();
+            BindingContext = chatbotpageVM;
 
             //Sets the top tab bar invisible
             Shell.SetTabBarIsVisible(this, false);
@@ -29,11 +31,6 @@ namespace BluePillApp.Views
 
             //Select the first Tab
             bar.CurrentItem = bar.Items[0];
-        }
-
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            
         }
     }
 }
