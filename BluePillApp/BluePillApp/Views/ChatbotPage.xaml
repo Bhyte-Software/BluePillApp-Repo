@@ -44,46 +44,51 @@
         <BoxView BackgroundColor="LightGray"
                  HorizontalOptions="FillAndExpand"
                  Grid.Row="2"/>
-        
-        
-        <!--Chat Entry and Send Button-->
-        <StackLayout Orientation="Horizontal" 
-                     Margin="0" 
-                     Grid.Row="3" 
-                     Padding="5,10,10,10">
-            
-            <!--Chat Entry-->
-            <renderers:RoundedEntry Text="{Binding TextToSend}" 
-                                    x:Name="ChatEntry"
-                                    Placeholder="Type your message"
-                                    CornerRadius="30"
-                                    BackColor="White"
-                                    BackgroundColor="Transparent"
-                                    BorderColor="#999999"
-                                    BorderWidth="5"
-                                    FontSize="16"
-                                    PlaceholderColor="#b3b3b3"
-                                    Keyboard="Chat"
-                                    WidthRequest="280"/>
-            
-            <!--Send Button-->
-            <pancake:PancakeView x:Name="sendBtn" 
-                                 BackgroundColor="#0f8df4"
-                                 CornerRadius="100"
-                                 xamEffects:TouchEffect.Color="White"
-                                 xamEffects:Commands.Tap="{Binding SendCommand}"
-                                 HeightRequest="47"
-                                 WidthRequest="47"
-                                 HorizontalOptions="EndAndExpand"
-                                 VerticalOptions="Center">
 
-                <Image Source="sendarrow1.png"
+
+        <!--Chat Entry and Send Button-->
+        <StackLayout Grid.Row="3" Padding="5,10,10,10" Margin="0">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="280"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Chat Entry-->
+                <renderers:RoundedEntry x:Name="ChatEntry"
+                                        Text="{Binding TextToSend}" 
+                                        Grid.Column="0"
+                                        Placeholder="Type your message"
+                                        CornerRadius="30"
+                                        BackColor="White"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="#999999"
+                                        BorderWidth="5"
+                                        FontSize="16"
+                                        PlaceholderColor="#b3b3b3"
+                                        Keyboard="Chat"
+                                        WidthRequest="280"/>
+
+                <!--Send Button-->
+                <pancake:PancakeView x:Name="sendBtn" 
+                                     Grid.Column="1"
+                                     BackgroundColor="#0f8df4"
+                                     CornerRadius="100"
+                                     xamEffects:TouchEffect.Color="White"
+                                     xamEffects:Commands.Tap="{Binding SendCommand}"
+                                     HeightRequest="47"
+                                     WidthRequest="47"
+                                     VerticalOptions="Center"
+                                     Margin="15,0,0,0">
+
+                    <Image Source="sendarrow1.png"
                        HeightRequest="30"
                        WidthRequest="30"
                        Margin="5,0,0,0"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"/>
-            </pancake:PancakeView>
+                </pancake:PancakeView>
+            </Grid>
         </StackLayout>
         
         

@@ -58,7 +58,6 @@ namespace BluePillApp.ViewModels
             {
                 //This adds the following to the messages collection
                 Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User});
-                Messages.Add(new ChatMessageModel() { Text = "Yes"});
             }
         }
     }
