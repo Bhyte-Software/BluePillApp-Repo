@@ -22,9 +22,9 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
 {
     [DesignTimeVisible(true)]
     [Obsolete]
-    public class RoundedEntryRenderer : EditorRenderer
+    public class RoundedEntryRenderer : EntryRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
 
@@ -73,5 +73,6 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
             DisplayMetrics metrics = context.Resources.DisplayMetrics;
             return TypedValue.ApplyDimension(ComplexUnitType.Dip, valueInDp, metrics);
         }
+    
     }
 }

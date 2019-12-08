@@ -6,6 +6,13 @@
              mc:Ignorable="d"
              x:Class="BluePillApp.App">
     <Application.Resources>
-
+        <OnPlatform x:TypeArguments="Label" x:Key="Montserrat" x:Name="mon">
+            <On Platform="Android" Value="MONTSERRAT-REGULAR.TTF#Montserrat"/>
+            <On Platform="iOS" Value="MONTSERRAT-REGULAR"/>
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="MontserratBold">
+            <On Platform="Android" Value="MONTSERRAT-BOLD.TTF#Montserrat"/>
+            <On Platform="iOS" Value="MONTSERRAT-BOLD"/>
+        </OnPlatform>
     </Application.Resources>
 </Application>

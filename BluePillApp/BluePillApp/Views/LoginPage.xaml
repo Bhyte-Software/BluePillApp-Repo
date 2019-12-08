@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
+             mc:Ignorable="d"
+             x:Class="BluePillApp.Views.LoginPage"
+             BackgroundColor="White">
+
+    <Grid>
+        <!--Background Image-->
+        <Grid BackgroundColor="White">
+            <Image/>
+        </Grid>
+        
+        <!--Main Login Page-->
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Login Label-->
+            <Label Text="Log into &#x0a; your account"
+                   Grid.Row="0"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="30"
+                   VerticalOptions="Center"
+                   Margin="0,60,0,0"/>
+            
+            <!--Email and Password Entries-->
+            <Grid Grid.Row="1"
+                  Margin="0,50,0,0">
+                <StackLayout HorizontalOptions="Center" 
+                             WidthRequest="320">
+                    <renderers:RoundedEntry Placeholder="Email"
+                                            PlaceholderColor="#666666"
+                                            BorderColor="#999999"
+                                            BorderWidth="6"
+                                            CornerRadius="15"
+                                            BackColor="White"
+                                            BackgroundColor="Transparent"
+                                            HeightRequest="55"
+                                            Margin="0,0,0,25"/>
+
+                    <renderers:RoundedEntry Placeholder="Password"
+                                            PlaceholderColor="#666666"
+                                            BorderColor="#999999"
+                                            BorderWidth="6"
+                                            CornerRadius="15"
+                                            BackColor="White"
+                                            BackgroundColor="Transparent"
+                                            HeightRequest="55"/>
+                </StackLayout>
+            </Grid>
+            
+            <!--Log In Buttons-->
+            <StackLayout Grid.Row="2"
+                         HorizontalOptions="CenterAndExpand"
+                         Margin="0,20,0,0">
+                
+                <!--Normal Log in Button-->
+                <pancake:PancakeView BackgroundColor="#0f8df4"
+                                     Padding="0,10,0,10"
+                                     CornerRadius="15"
+                                     Margin="0,0,0,10"
+                                     xamEffects:TouchEffect.Color="White"
+                                     xamEffects:Commands.Tap="{Binding LoginButtonTappedCommand}">
+                    <Label Text="Log in"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="19"/>
+                </pancake:PancakeView>
+
+                <!--Log in with Google Button-->
+                <pancake:PancakeView BackgroundColor="#e03633"
+                                     Padding="65,10,65,10"
+                                     CornerRadius="15"
+                                     xamEffects:TouchEffect.Color="White">
+                    <Label Text="Log in with Google"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="19"/>
+                </pancake:PancakeView>
+            </StackLayout>
+
+            <!--Terms and Conditions Label-->
+            <Label Text="By signing in, you are agreeing to &#x0a; all terms and conditions"
+                   Grid.Row="3"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="End"
+                   Margin="0,0,0,10"/>
+        </Grid>
+    </Grid>
+</ContentPage>

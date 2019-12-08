@@ -13,24 +13,35 @@ namespace BluePillApp.ViewModels
     /// <summary>
     /// View model for the ChatbotPage.xaml
     /// </summary>
-    public class ChatbotPageViewModel : INotifyPropertyChanged
+    public class ChatbotPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        private string _texttosend;
 
         /// <summary>
-        /// A collection.list of chat message items
+        /// A collection/list of chat message items
         /// </summary>
         public ObservableCollection<ChatMessageModel> Messages { get; set; } = new ObservableCollection<ChatMessageModel>();
 
         /// <summary>
         /// The text that the user inputs
         /// </summary>
-        public string TextToSend { get; set; }
+        public string TextToSend
+        {
+            get
+            {
+                return _texttosend;
+            }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public System.Action RefreshScrollDown;
+            set
+            {
+                if (_texttosend != value)
+                {
+                    _texttosend = value;
+
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         /// <summary>
         /// A command for sending the users messages
@@ -58,6 +69,9 @@ namespace BluePillApp.ViewModels
             {
                 //This adds the following to the messages collection
                 Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User});
+
+                //Removes the text in the Entry after message is sent
+                TextToSend = string.Empty;
             }
         }
     }

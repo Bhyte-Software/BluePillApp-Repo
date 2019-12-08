@@ -4,10 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:urhoForms="clr-namespace:Urho.Forms;assembly=UrhoSharp.Forms"
+             xmlns:local="clr-namespace:BluePillApp"
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.FirstAidPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="Label" x:Key="Montserrat">
+                <On Platform="Android" Value="MONTSERRAT-REGULAR.TTF#Montserrat"/>
+                <On Platform="iOS" Value="MONTSERRAT-REGULAR"/>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid RowSpacing="0" ColumnSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,6 +30,7 @@
 
             <Label Text="First-Aid"
                    TextColor="Black"
+                   FontFamily="{StaticResource Montserrat}"
                    FontAttributes="Bold"
                    FontSize="20"/>
         </pancake:PancakeView>

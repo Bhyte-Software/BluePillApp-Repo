@@ -17,8 +17,12 @@ namespace BluePillApp {
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.OnPlatform<global::Xamarin.Forms.Label> mon;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(App));
+            mon = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.OnPlatform<global::Xamarin.Forms.Label>>(this, "mon");
         }
     }
 }

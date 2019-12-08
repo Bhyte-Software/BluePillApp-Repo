@@ -71,8 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AndroidCustomRenderers\FontAwesomeIconRenderer.cs" />
-    <Compile Include="AndroidCustomRenderers\RoundedEntryRenderer.cs" />
+    <Compile Include="AndroidCustomRenderers\RoundedEditorRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\CustomShellRenderer.cs" />
+    <Compile Include="AndroidCustomRenderers\RoundedEntryRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +82,8 @@
     <AndroidAsset Include="Assets\fa-solid-900.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
+    <AndroidAsset Include="Assets\MONTSERRAT-REGULAR.TTF" />
+    <AndroidAsset Include="Assets\MONTSERRAT-BOLD.TTF" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 namespace BluePillApp.CustomRenderers
 {
     [DesignTimeVisible(true)]
-    public class RoundedEntry : Editor
+    public class RoundedEntry : Entry
     {
         //Border Colour Custom Property
         public static readonly BindableProperty BorderColorProperty =
@@ -87,22 +87,6 @@ namespace BluePillApp.CustomRenderers
         {
             get { return (bool)GetValue(IsCurvedCornersEnabledProperty); }
             set { SetValue(IsCurvedCornersEnabledProperty, value); }
-        }
-
-
-        public RoundedEntry()
-        {
-            TextChanged += OnTextChanged;
-        }
-
-        ~RoundedEntry()
-        {
-            TextChanged -= OnTextChanged;
-        }
-
-        private void OnTextChanged(object sender, TextChangedEventArgs e)
-        {
-            InvalidateMeasure();
         }
     }
 }

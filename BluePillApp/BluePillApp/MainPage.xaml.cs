@@ -18,6 +18,9 @@ namespace BluePillApp
         public MainPage()
         {
             InitializeComponent();
+
+            //Remove the navigation bar from NavigationPage
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

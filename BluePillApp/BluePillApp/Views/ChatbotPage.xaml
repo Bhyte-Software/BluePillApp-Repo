@@ -30,14 +30,14 @@
         
         <!--Chat Messages Area-->
         <renderers:AutoScrollListView x:Name="messagesListView" 
-                  Grid.Row="1" 
-                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
-                  ItemsSource="{Binding Messages}" 
-                  Margin="0" 
-                  HasUnevenRows="True" 
-                  VerticalOptions="FillAndExpand" 
-                  SeparatorColor="Transparent"
-                  SelectionMode="None">
+                                      Grid.Row="1" 
+                                      ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                                      ItemsSource="{Binding Messages}" 
+                                      Margin="0" 
+                                      HasUnevenRows="True" 
+                                      VerticalOptions="FillAndExpand" 
+                                      SeparatorColor="Transparent"
+                                      SelectionMode="None">
         </renderers:AutoScrollListView>
 
         <!--A simple separater-->
@@ -46,28 +46,27 @@
                  Grid.Row="2"/>
 
 
-        <!--Chat Entry and Send Button-->
+        <!--Chatbot Entry and Send Button-->
         <StackLayout Grid.Row="3" Padding="5,10,10,10" Margin="0">
             <Grid ColumnSpacing="0" RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="280"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 
                 <!--Chat Entry-->
-                <renderers:RoundedEntry x:Name="ChatEntry"
-                                        Text="{Binding TextToSend}" 
+                <renderers:RoundedEditor x:Name="ChatEntry"
+                                        Text="{Binding TextToSend, Mode=TwoWay}" 
                                         Grid.Column="0"
                                         Placeholder="Type your message"
                                         CornerRadius="30"
                                         BackColor="White"
                                         BackgroundColor="Transparent"
                                         BorderColor="#999999"
-                                        BorderWidth="5"
+                                        BorderWidth="6"
                                         FontSize="16"
                                         PlaceholderColor="#b3b3b3"
-                                        Keyboard="Chat"
-                                        WidthRequest="280"/>
+                                        Keyboard="Chat"/>
 
                 <!--Send Button-->
                 <pancake:PancakeView x:Name="sendBtn" 
@@ -79,7 +78,7 @@
                                      HeightRequest="47"
                                      WidthRequest="47"
                                      VerticalOptions="Center"
-                                     Margin="15,0,0,0">
+                                     HorizontalOptions="End">
 
                     <Image Source="sendarrow1.png"
                        HeightRequest="30"

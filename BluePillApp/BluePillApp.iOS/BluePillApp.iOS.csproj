@@ -60,7 +60,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="iOSCustomRenderers\RoundedEntryRenderer.cs" />
+    <Compile Include="iOSCustomRenderers\RoundedEditorRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -69,6 +69,8 @@
     <BundleResource Include="Resources\fa-solid-900.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Resources\MONTSERRAT-REGULAR.TTF" />
+    <BundleResource Include="Resources\MONTSERRAT-BOLD.TTF" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

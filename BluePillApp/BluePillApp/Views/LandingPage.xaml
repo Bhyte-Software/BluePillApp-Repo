@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BluePillApp"
+             xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
+             mc:Ignorable="d"
+             x:Class="BluePillApp.Views.LandingPage">
+
+    <Grid BackgroundColor="#53eaf2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--BluePill Logo-->
+        <Frame BackgroundColor="Green" Grid.Row="0">
+            <Image/>
+        </Frame>
+        
+        
+        <!--SignIn and SignUp Buttons-->
+        <StackLayout Grid.Row="1" 
+                     HorizontalOptions="CenterAndExpand">
+            
+            <!--SignUp/Create new account button-->
+            <pancake:PancakeView BackgroundColor="White"
+                                 CornerRadius="20"
+                                 Padding="0,15,0,15"
+                                 Margin="0,0,0,15"
+                                 xamEffects:TouchEffect.Color="LightBlue">
+                
+                <Label Text="Create a new account"
+                       TextColor="#53eaf2"
+                       FontSize="19"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </pancake:PancakeView>
+
+            <!--SignIn/Login button-->
+            <pancake:PancakeView BackgroundColor="Transparent"
+                                 BorderColor="White"
+                                 BorderThickness="3"
+                                 CornerRadius="20"
+                                 Padding="20,15,20,15"
+                                 xamEffects:TouchEffect.Color="White"
+                                 xamEffects:Commands.Tap="{Binding OpenLoginPageCommand}">
+
+                <Label Text="I already have an account"
+                       TextColor="White"
+                       FontSize="19"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </pancake:PancakeView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

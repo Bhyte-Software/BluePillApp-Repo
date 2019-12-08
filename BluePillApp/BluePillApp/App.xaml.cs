@@ -11,10 +11,10 @@ namespace BluePillApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LandingPage());
         }
 
-        //String for message the user
+        //String for the message user
         public static string User = "User";
 
         protected override void OnStart()

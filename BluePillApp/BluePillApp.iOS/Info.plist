@@ -37,6 +37,8 @@
     <key>UIAppFonts</key>
     <array>
         <string>fa-solid-900.ttf</string>
+        <string>MONTSERRAT-BOLD.TTF</string>
+        <string>MONTSERRAT-REGULAR.TTF</string>
     </array>
 </dict>
 </plist>
