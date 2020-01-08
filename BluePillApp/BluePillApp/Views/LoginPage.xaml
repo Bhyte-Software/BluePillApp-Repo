@@ -13,7 +13,8 @@
     <Grid>
         <!--Background Image-->
         <Grid BackgroundColor="White">
-            <Image/>
+            <Image Source="gradient1.jpg"
+                   VerticalOptions="End"/>
         </Grid>
         
         <!--Main Login Page-->
@@ -33,7 +34,7 @@
                    TextColor="Black"
                    FontSize="30"
                    VerticalOptions="Center"
-                   Margin="0,60,0,0"/>
+                   Margin="0,30,0,0"/>
             
             <!--Email and Password Entries-->
             <Grid Grid.Row="1"
@@ -48,7 +49,7 @@
                                             BackColor="White"
                                             BackgroundColor="Transparent"
                                             HeightRequest="55"
-                                            Margin="0,0,0,25"/>
+                                            Margin="0,0,0,30"/>
 
                     <renderers:RoundedEntry Placeholder="Password"
                                             PlaceholderColor="#666666"

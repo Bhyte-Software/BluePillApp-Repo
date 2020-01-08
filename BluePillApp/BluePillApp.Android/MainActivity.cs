@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using BluePillApp.Droid.AndroidCustomRenderers;
 
 namespace BluePillApp.Droid
 {
@@ -30,6 +31,33 @@ namespace BluePillApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private bool _lieAboutCurrentFocus;
+        public override bool DispatchTouchEvent(MotionEvent ev)
+        {
+            var focused = CurrentFocus;
+            bool customEntryRendererFocused = focused != null && focused.Parent is RoundedEditorRenderer;
+
+            _lieAboutCurrentFocus = customEntryRendererFocused;
+            //_lieAboutCurrentFocus = true;
+            var result = base.DispatchTouchEvent(ev);
+            _lieAboutCurrentFocus = false;
+
+            return result;
+        }
+
+        public override View CurrentFocus
+        {
+            get
+            {
+                if (_lieAboutCurrentFocus)
+                {
+                    return null;
+                }
+
+                return base.CurrentFocus;
+            }
         }
     }
 }

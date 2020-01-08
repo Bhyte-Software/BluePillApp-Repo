@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="coolio.simlpk" />
+    <None Remove="Helpers\nice.siml" />
+    <None Remove="Helpers\test1.simlpk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Syn.Bot" Version="3.4.0" />
     <PackageReference Include="ThriveGmbH.BottomNavigationBar.XF" Version="1.0.2" />
     <PackageReference Include="UrhoSharp.Forms" Version="1.9.67" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
@@ -16,7 +24,12 @@
 
   <ItemGroup>
     <Folder Include="Styles\" />
-    <Folder Include="Views\Tabs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="coolio.simlpk" />
+    <EmbeddedResource Include="Helpers\nice.siml" />
+    <EmbeddedResource Include="Helpers\test1.simlpk" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,10 +48,10 @@
     <EmbeddedResource Update="Page4.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ChatbotPage.xaml">
+    <EmbeddedResource Update="Views\Tabs\ChatbotPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FirstAidPage.xaml">
+    <EmbeddedResource Update="Views\Tabs\FirstAidPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LandingPage.xaml">
@@ -47,10 +60,10 @@
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TelemedicineMainPage.xaml">
+    <EmbeddedResource Update="Views\Tabs\TelemedicineMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\UserProfilePage.xaml">
+    <EmbeddedResource Update="Views\Tabs\UserProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

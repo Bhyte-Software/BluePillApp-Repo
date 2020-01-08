@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             
+             mc:Ignorable="d"
+             x:Class="BluePillApp.Views.UserProfilePage">
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Main Profile-->
+        <pancake:PancakeView Grid.Row="0"
+                             BackgroundColor="#53eaf2"
+                             CornerRadius="0,0,20,20">
+
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <!--Row Definitions-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Column Definitions-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+
+                <!--Picture and Info-->
+                
+                <!--Profile pic-->
+                <Frame Grid.Column="0"
+                       Grid.Row="0"
+                       BackgroundColor="Gray"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       Margin="10,20,0,0"
+                       HasShadow="False"
+                       CornerRadius="100"
+                       WidthRequest="90"
+                       HeightRequest="90">
+                    
+                    <Image HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Frame>
+                
+                <!--User info-->
+                <StackLayout Grid.Column="1"
+                             Grid.Row="1"
+                             Margin="10,-80,0,0"
+                             Spacing="0">
+                    
+                    <Label Text="Name"
+                           TextColor="White"
+                           FontSize="22"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="Location"
+                           TextColor="White"
+                           FontSize="18"/>
+
+                    <Label Text="Number"
+                           TextColor="White"
+                           FontSize="18"/>
+                </StackLayout>
+
+                <!--EDIT Label-->
+                <Label Text="EDIT"
+                       Grid.Row="2"
+                       Grid.Column="2"
+                       TextColor="#0f8df4"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End"
+                       Margin="0,0,20,10"/>
+            </Grid>
+        </pancake:PancakeView>
+        
+        <!--Medical Options-->
+        <Grid Grid.Row="1"
+              Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+
+            </StackLayout>
+        </Grid>
+        
+        
+        <!--Other Options-->
+        <ListView Grid.Row="2">
+            
+        </ListView>
+    </Grid>
+</ContentPage>

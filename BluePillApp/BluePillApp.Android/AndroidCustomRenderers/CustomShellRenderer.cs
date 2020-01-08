@@ -14,6 +14,7 @@ using BluePillApp.Droid.AndroidCustomRenderers;
 using BluePillApp.CustomRenderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Android.Support.Design.BottomNavigation;
 
 [assembly: ExportRenderer(typeof(DropshadowShell), typeof(CustomShellRenderer))]
 namespace BluePillApp.Droid.AndroidCustomRenderers
@@ -45,6 +46,7 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
         public void SetAppearance(BottomNavigationView bottomView, ShellAppearance appearance)
         {
             bottomView.SetBackgroundColor(Android.Graphics.Color.White);
+            bottomView.LabelVisibilityMode = LabelVisibilityMode.LabelVisibilityUnlabeled;
         }
     }
 }

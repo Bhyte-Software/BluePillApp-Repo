@@ -7,6 +7,13 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Syn.Bot.Siml;
+using Syn.Bot.Oscova;
+using Syn.Bot.Oscova.Attributes;
+using System.Reflection;
+using System.IO;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BluePillApp.ViewModels
 {
@@ -15,7 +22,15 @@ namespace BluePillApp.ViewModels
     /// </summary>
     public class ChatbotPageViewModel : BaseViewModel
     {
+        /// <summary>
+        /// A field for TextToSend
+        /// </summary>
         private string _texttosend;
+
+        /// <summary>
+        /// An Instance of a new SIML Oscova Chatbot
+        /// </summary>
+        public OscovaBot chatbot;
 
         /// <summary>
         /// A collection/list of chat message items
@@ -54,21 +69,34 @@ namespace BluePillApp.ViewModels
         /// </summary>
         public ChatbotPageViewModel()
         {
-            Messages.Add(new ChatMessageModel() { Text = "Hi" });
-            Messages.Add(new ChatMessageModel() { Text = "How are you?" });
-
             SendCommand = new RelayCommand(Send);
+
+            chatbot = new OscovaBot();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BluePillApp.Helpers.nice.siml");
+
+            chatbot.Import(XDocument.Load(stream));
+            chatbot.Trainer.StartTraining();
         }
 
         /// <summary>
         /// This function sends a message
         /// </summary>
-        private void Send()
+        public void Send()
         {
             if (!string.IsNullOrEmpty(TextToSend))
             {
-                //This adds the following to the messages collection
-                Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User});
+                //This adds a new message to the messages collection
+                Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User });
+
+                //This gets he chatbots response for each message
+                chatbot.MainUser.ResponseReceived += (sender, args) =>
+                {
+                    Messages.Add(new ChatMessageModel() { Text = args.Response.Text });
+                };
+
+                var result = chatbot.Evaluate(TextToSend);
+                result.Invoke();
 
                 //Removes the text in the Entry after message is sent
                 TextToSend = string.Empty;

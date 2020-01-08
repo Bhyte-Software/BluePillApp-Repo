@@ -20,13 +20,71 @@
           "lib/MonoAndroid403/BottomNavigationBar.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.3": {
+      "Jint/2.11.58": {
         "type": "package",
         "compile": {
-          "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Jint.dll": {}
         },
         "runtime": {
-          "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Jint.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Syn.Bot/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Jint": "2.11.58",
+          "Newtonsoft.Json": "11.0.2",
+          "Syn.Oryzer": "1.3.0",
+          "Syn.Utilities": "1.3.0",
+          "Syn.VA": "1.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syn.Bot.dll": {}
+        }
+      },
+      "Syn.Oryzer/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Syn.Utilities": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syn.Oryzer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syn.Oryzer.dll": {}
+        }
+      },
+      "Syn.Utilities/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Syn.Utilities.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syn.Utilities.dll": {}
+        }
+      },
+      "Syn.VA/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Syn.Utilities": "1.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syn.VA.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syn.VA.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -898,6 +956,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "Syn.Bot": "3.4.0",
           "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "UrhoSharp.Forms": "1.9.67",
           "XamEffects": "1.6.3",
@@ -928,14 +988,30 @@
         "lib/MonoAndroid403/BottomNavigationBar.xml"
       ]
     },
-    "Newtonsoft.Json/8.0.3": {
-      "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
+    "Jint/2.11.58": {
+      "sha512": "obRlPnuSmbjO7I2bfuKc1d+K1LB3xyg1Cnm2MT7PGUOHOntcdR96pDhsQnWBI5Dhxqr1Bj5/odpNi/B+AwVlPA==",
       "type": "package",
-      "path": "newtonsoft.json/8.0.3",
-      "hasTools": true,
+      "path": "jint/2.11.58",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "jint.2.11.58.nupkg.sha512",
+        "jint.nuspec",
+        "lib/net40/Jint.dll",
+        "lib/net45/Jint.dll",
+        "lib/net451/Jint.dll",
+        "lib/netstandard1.3/Jint.dll",
+        "lib/netstandard2.0/Jint.dll"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -944,13 +1020,79 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
-        "newtonsoft.json.8.0.3.nupkg.sha512",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
-        "tools/install.ps1"
+        "packageIcon.png"
+      ]
+    },
+    "Syn.Bot/3.4.0": {
+      "sha512": "391qLz0RLeHBdmk8yUt8E3/fxJfRda9DESDdBVaBFGx9dH1E7AVN9j58dbT9F0PR4u4894GCh21UMxzmQ3I4ng==",
+      "type": "package",
+      "path": "syn.bot/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Syn.Bot.dll",
+        "lib/net45/Syn.Bot.xml",
+        "lib/net461/Syn.Bot.dll",
+        "lib/net461/Syn.Bot.xml",
+        "lib/netstandard2.0/Syn.Bot.dll",
+        "lib/netstandard2.0/Syn.Bot.xml",
+        "syn.bot.3.4.0.nupkg.sha512",
+        "syn.bot.nuspec"
+      ]
+    },
+    "Syn.Oryzer/1.3.0": {
+      "sha512": "9mqIPmae8gmhFhbUz4dNd6q/OFOoMdVzIO/WiG70E2d90EODXUVeU49PCGMipo5NhTMjdJlG1/uSzZ6ytOV87Q==",
+      "type": "package",
+      "path": "syn.oryzer/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Syn.Oryzer.dll",
+        "lib/net45/Syn.Oryzer.xml",
+        "lib/net461/Syn.Oryzer.dll",
+        "lib/netstandard2.0/Syn.Oryzer.dll",
+        "syn.oryzer.1.3.0.nupkg.sha512",
+        "syn.oryzer.nuspec"
+      ]
+    },
+    "Syn.Utilities/1.3.0": {
+      "sha512": "906diXurPEgUQgOVmNpEaK0BEA6vYWWkiKNKe8M4jNAmv9Fam30ypUupgAkiVO6Mk5aDLPqNCfMNymOyNJoteQ==",
+      "type": "package",
+      "path": "syn.utilities/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Syn.Utilities.dll",
+        "lib/net461/Syn.Utilities.dll",
+        "lib/netstandard2.0/Syn.Utilities.dll",
+        "syn.utilities.1.3.0.nupkg.sha512",
+        "syn.utilities.nuspec"
+      ]
+    },
+    "Syn.VA/1.1.6": {
+      "sha512": "2K0NffvTgK0RuCxlravERWXfdc06aUSZm1jeR1tbv1JtlXhi3FwMZEn9T1o7dmu5STRg5Bjt1Ocuh2iWssMYeg==",
+      "type": "package",
+      "path": "syn.va/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Syn.VA.dll",
+        "lib/net461/Syn.VA.dll",
+        "lib/netstandard2.0/Syn.VA.dll",
+        "syn.va.1.1.6.nupkg.sha512",
+        "syn.va.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -2131,6 +2273,8 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "BluePillApp >= 1.0.0",
+      "Newtonsoft.Json >= 12.0.3",
+      "Syn.Bot >= 3.4.0",
       "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "UrhoSharp.Forms >= 1.9.67",
       "XamEffects >= 1.6.3",
@@ -2182,6 +2326,14 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          },
+          "Syn.Bot": {
+            "target": "Package",
+            "version": "[3.4.0, )"
+          },
           "ThriveGmbH.BottomNavigationBar.XF": {
             "target": "Package",
             "version": "[1.0.2, )"

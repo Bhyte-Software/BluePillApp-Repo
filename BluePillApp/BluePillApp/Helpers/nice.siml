@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Siml>
+  <Dialog Name="Yayy" IntentAlias="Yaaay-yay">
+    <Intent>
+      <Expression Value="Do you have a name" />
+      <Response>Yes, yes I do</Response>
+    </Intent>
+  </Dialog>
+  <Dialog Name="HelloBotDialog" IntentAlias="smalltalk-greetings">
+    <!--This intent does not need a name as an `IntentAlias` value has been specified-->
+    <Intent>
+      <Expression>HELLO</Expression>
+      <Response>Hello Developer!</Response>
+    </Intent>
+    <Intent>
+      <Expression Value="Bye" />
+      <Response>Goodbye</Response>
+    </Intent>
+  </Dialog>
+  <BotSettings>
+    <!--"Name" is the name the bot refers itself with.-->
+    <Variable Name="Name" Value="OSCOVA" />
+  </BotSettings>
+  <Filter>
+    <Word>ah</Word>
+    <Word>uh</Word>
+    <Word>uhh</Word>
+    <Word>huh</Word>
+    <Word>um</Word>
+    <Word>umm</Word>
+    <Word>er</Word>
+    <Word>erm</Word>
+    <Word>hmm</Word>
+    <!--Consider Removing if necessary-->
+    <Word>so</Word>
+    <Word>well</Word>
+    <Word>actually</Word>
+    <Word>basically</Word>
+    <Word>literally</Word>
+    <Word>kind of</Word>
+    <Word>sort of</Word>
+    <Word>you know</Word>
+    <Word>I mean</Word>
+    <Word>like I said</Word>
+  </Filter>
+  <StopWord>
+    <Item>a</Item>
+    <Item>able</Item>
+    <Item>about</Item>
+    <Item>across</Item>
+    <Item>after</Item>
+    <Item>all</Item>
+    <Item>almost</Item>
+    <Item>also</Item>
+    <Item>am</Item>
+    <Item>among</Item>
+    <Item>an</Item>
+    <Item>and</Item>
+    <Item>any</Item>
+    <Item>are</Item>
+    <Item>as</Item>
+    <Item>at</Item>
+    <Item>be</Item>
+    <Item>because</Item>
+    <Item>been</Item>
+    <Item>but</Item>
+    <Item>by</Item>
+    <Item>can</Item>
+    <Item>cannot</Item>
+    <Item>could</Item>
+    <Item>dear</Item>
+    <Item>did</Item>
+    <Item>do</Item>
+    <Item>does</Item>
+    <Item>either</Item>
+    <Item>else</Item>
+    <Item>ever</Item>
+    <Item>every</Item>
+    <Item>for</Item>
+    <Item>from</Item>
+    <Item>get</Item>
+    <Item>got</Item>
+    <Item>had</Item>
+    <Item>has</Item>
+    <Item>have</Item>
+    <Item>he</Item>
+    <Item>her</Item>
+    <Item>hers</Item>
+    <Item>him</Item>
+    <Item>his</Item>
+    <Item>how</Item>
+    <Item>however</Item>
+    <Item>i</Item>
+    <Item>if</Item>
+    <Item>in</Item>
+    <Item>into</Item>
+    <Item>is</Item>
+    <Item>it</Item>
+    <Item>its</Item>
+    <Item>just</Item>
+    <Item>least</Item>
+    <Item>let</Item>
+    <Item>like</Item>
+    <Item>likely</Item>
+    <Item>may</Item>
+    <Item>me</Item>
+    <Item>might</Item>
+    <Item>most</Item>
+    <Item>must</Item>
+    <Item>my</Item>
+    <Item>neither</Item>
+    <Item>no</Item>
+    <Item>nor</Item>
+    <Item>not</Item>
+    <Item>of</Item>
+    <Item>off</Item>
+    <Item>often</Item>
+    <Item>on</Item>
+    <Item>only</Item>
+    <Item>or</Item>
+    <Item>other</Item>
+    <Item>our</Item>
+    <Item>own</Item>
+    <Item>rather</Item>
+    <Item>said</Item>
+    <Item>say</Item>
+    <Item>says</Item>
+    <Item>she</Item>
+    <Item>should</Item>
+    <Item>since</Item>
+    <Item>so</Item>
+    <Item>some</Item>
+    <Item>than</Item>
+    <Item>that</Item>
+    <Item>the</Item>
+    <Item>their</Item>
+    <Item>them</Item>
+    <Item>then</Item>
+    <Item>there</Item>
+    <Item>these</Item>
+    <Item>they</Item>
+    <Item>this</Item>
+    <Item>tis</Item>
+    <Item>to</Item>
+    <Item>too</Item>
+    <Item>twas</Item>
+    <Item>us</Item>
+    <Item>wants</Item>
+    <Item>was</Item>
+    <Item>we</Item>
+    <Item>were</Item>
+    <Item>what</Item>
+    <Item>when</Item>
+    <Item>where</Item>
+    <Item>which</Item>
+    <Item>while</Item>
+    <Item>who</Item>
+    <Item>whom</Item>
+    <Item>why</Item>
+    <Item>will</Item>
+    <Item>with</Item>
+    <Item>would</Item>
+    <Item>yet</Item>
+    <Item>you</Item>
+    <Item>your</Item>
+  </StopWord>
+  <UserSettings>
+    <!--"Name" is the default name for all users-->
+    <Variable Name="Name" Value="User" />
+  </UserSettings>
+</Siml>

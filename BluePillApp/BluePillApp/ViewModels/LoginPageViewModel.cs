@@ -21,12 +21,19 @@ namespace BluePillApp.ViewModels
         public LoginPageViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            LoginButtonTappedCommand = new RelayCommand(async () => await LoginButtonTapped());
+            LoginButtonTappedCommand = //new RelayCommand(async () => await LoginButtonTapped());
+                                       new RelayCommand(Next);
         }
 
         public async Task LoginButtonTapped()
         {
             await Navigation.PushAsync(new MainPage());
+            //Application.Current.MainPage = new MainPage();
+        }
+
+        public void Next()
+        {
+            Application.Current.MainPage = new MainPage();
         }
     }
 }
