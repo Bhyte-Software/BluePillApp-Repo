@@ -28,22 +28,22 @@
     <!--BluePill Pages-->
     <TabBar Style="{StaticResource FreeStyle}">
         <!--TeleMED Tab-->
-        <Tab Icon="telemedicineIcon.png">
+        <Tab Icon="telemedicineIcon.png" Title="Telemedicine">
             <ShellContent ContentTemplate="{DataTemplate views:TelemedicineMainPage}"/>
         </Tab>
         
         <!--Fleming Tab-->
-        <Tab Icon="chatbotIcon.png">
+        <Tab Icon="chatbotIcon.png" Title="Fleming">
             <ShellContent ContentTemplate="{DataTemplate views:ChatbotPage}"/>
         </Tab>
         
         <!--FirstAid Tab-->
-        <Tab Icon="firstaidIcon.png">
+        <Tab Icon="firstaidIcon.png" Title="First-Aid">
             <ShellContent ContentTemplate="{DataTemplate views:FirstAidPage}"/>
         </Tab>
         
         <!--User Profile Tab-->
-        <Tab Icon="profileIcon.png">
+        <Tab Icon="profileIcon.png" Title="User">
             <ShellContent ContentTemplate="{DataTemplate views:UserProfilePage}"/>
         </Tab>
     </TabBar>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BluePillApp.ViewModels.Tabs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace BluePillApp.Views
         public UserProfilePage()
         {
             InitializeComponent();
+
+            BindingContext = new UPPViewModel();
         }
     }
 }

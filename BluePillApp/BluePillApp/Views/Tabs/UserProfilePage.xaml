@@ -4,114 +4,205 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.UserProfilePage">
 
-    <Grid RowSpacing="0" ColumnSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ScrollView>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         
-        <!--Main Profile-->
-        <pancake:PancakeView Grid.Row="0"
-                             BackgroundColor="#53eaf2"
-                             CornerRadius="0,0,20,20">
+            <!--Main Profile-->
+            <pancake:PancakeView Grid.Row="0"
+                                 BackgroundGradientStartColor="#53EAF2"
+                                 BackgroundGradientEndColor="#57BEFF"
+                                 BackgroundGradientAngle="130"
+                                 CornerRadius="0,0,20,20">
 
-            <Grid ColumnSpacing="0" RowSpacing="0">
-                <!--Row Definitions-->
+                <Grid ColumnSpacing="0" RowSpacing="0">
+                    <!--Row Definitions-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Column Definitions-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                
+
+                    <!--Picture and Info-->
+                
+                    <!--Profile pic-->
+                    <Frame Grid.Column="0"
+                           Grid.Row="0"
+                           BackgroundColor="Gray"
+                           IsClippedToBounds="True"
+                           Padding="0"
+                           Margin="10,20,0,0"
+                           HasShadow="False"
+                           CornerRadius="100"
+                           WidthRequest="90"
+                           HeightRequest="90">
+                    
+                        <Image HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Frame>
+                
+                    <!--User info-->
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="1"
+                                 Margin="10,-80,0,0"
+                                 Spacing="0">
+                    
+                        <Label Text="Name"
+                               TextColor="White"
+                               FontSize="22"
+                               FontAttributes="Bold"/>
+
+                        <Label Text="Location"
+                               TextColor="White"
+                               FontSize="18"/>
+
+                        <Label Text="Number"
+                               TextColor="White"
+                               FontSize="18"/>
+                    </StackLayout>
+
+                    <!--EDIT Label-->
+                    <Label Text="EDIT"
+                           Grid.Row="2"
+                           Grid.Column="2"
+                           TextColor="#0f8df4"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"
+                           Margin="0,0,20,10"/>
+                </Grid>
+            </pancake:PancakeView>
+        
+        
+            <!--Medical Options-->
+            <Grid Grid.Row="1"
+                  Margin="0,20,0,20">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!--Column Definitions-->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="0"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
 
-                <!--Picture and Info-->
-                
-                <!--Profile pic-->
-                <Frame Grid.Column="0"
-                       Grid.Row="0"
-                       BackgroundColor="Gray"
-                       IsClippedToBounds="True"
-                       Padding="0"
-                       Margin="10,20,0,0"
-                       HasShadow="False"
-                       CornerRadius="100"
-                       WidthRequest="90"
-                       HeightRequest="90">
+                    <!--Med Data-->
+                    <pancake:PancakeView BackgroundColor="#8FB7EF"
+                                         HeightRequest="120"
+                                         WidthRequest="170"
+                                         CornerRadius="20"
+                                         Margin="0,0,2,0"
+                                         xamEffects:TouchEffect.Color="Red">
                     
-                    <Image HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
-                </Frame>
-                
-                <!--User info-->
-                <StackLayout Grid.Column="1"
-                             Grid.Row="1"
-                             Margin="10,-80,0,0"
-                             Spacing="0">
-                    
-                    <Label Text="Name"
-                           TextColor="White"
-                           FontSize="22"
-                           FontAttributes="Bold"/>
+                        <Label Text="View your personal medical data"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="15"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                    </pancake:PancakeView>
 
-                    <Label Text="Location"
-                           TextColor="White"
-                           FontSize="18"/>
+                    <!---->
+                    <pancake:PancakeView BackgroundColor="#53D5F4"
+                                         HeightRequest="50"
+                                         WidthRequest="170"
+                                         CornerRadius="20"
+                                         xamEffects:TouchEffect.Color="Red">
 
-                    <Label Text="Number"
-                           TextColor="White"
-                           FontSize="18"/>
+                        <Label Text="Hmmm"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="15"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                    </pancake:PancakeView>
+
                 </StackLayout>
 
-                <!--EDIT Label-->
-                <Label Text="EDIT"
-                       Grid.Row="2"
-                       Grid.Column="2"
-                       TextColor="#0f8df4"
-                       FontAttributes="Bold"
-                       HorizontalOptions="End"
-                       Margin="0,0,20,10"/>
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Margin="0,10,0,0">
+
+                    <!--Meds and Prescriptions-->
+                    <pancake:PancakeView BackgroundColor="#53FFC6"
+                                         HeightRequest="120"
+                                         WidthRequest="170"
+                                         CornerRadius="20"
+                                         Margin="0,0,2,0"
+                                         xamEffects:TouchEffect.Color="Red">
+
+                        <Label Text="View your medications and prescriptions"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="15"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                    </pancake:PancakeView>
+
+                    <!--Booked Appointments-->
+                    <pancake:PancakeView BackgroundColor="#69F794"
+                                         HeightRequest="50"
+                                         WidthRequest="170"
+                                         CornerRadius="20"
+                                         xamEffects:TouchEffect.Color="Red">
+
+                        <Label Text="View all booked appointments"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="15"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                    </pancake:PancakeView>
+
+                </StackLayout>
             </Grid>
-        </pancake:PancakeView>
-        
-        <!--Medical Options-->
-        <Grid Grid.Row="1"
-              Margin="0,20,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal"
-                         Grid.Row="0"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-                
-            </StackLayout>
+            <!--Seperator-->
+            <BoxView Grid.Row="2"
+                     BackgroundColor="#CCCCCC"/>
 
-            <StackLayout Orientation="Horizontal"
-                         Grid.Row="1"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
-
-            </StackLayout>
+            <!--Other Options-->
+            <ListView x:Name="OptionsListView" 
+                      Grid.Row="3"
+                      ItemsSource="{Binding OtherOptions}"
+                      SeparatorColor="#CCCCCC"
+                      HasUnevenRows="True"
+                      SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid VerticalOptions="Center"
+                                  Margin="15,20,0,20">
+                                
+                                <Label Text="{Binding Option}"
+                                       VerticalTextAlignment="Center"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       FontSize="20"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-        
-        
-        <!--Other Options-->
-        <ListView Grid.Row="2">
-            
-        </ListView>
-    </Grid>
+    </ScrollView>
 </ContentPage>
