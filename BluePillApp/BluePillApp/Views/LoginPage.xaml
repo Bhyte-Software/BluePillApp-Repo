@@ -41,6 +41,8 @@
                   Margin="0,50,0,0">
                 <StackLayout HorizontalOptions="Center" 
                              WidthRequest="320">
+                    
+                    <!--Email-->
                     <renderers:RoundedEntry Placeholder="Email"
                                             PlaceholderColor="#666666"
                                             BorderColor="#999999"
@@ -51,6 +53,7 @@
                                             HeightRequest="55"
                                             Margin="0,0,0,30"/>
 
+                    <!--Password-->
                     <renderers:RoundedEntry Placeholder="Password"
                                             PlaceholderColor="#666666"
                                             BorderColor="#999999"

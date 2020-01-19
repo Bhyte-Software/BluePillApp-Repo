@@ -40,7 +40,7 @@
                                       SelectionMode="None">
         </renderers:AutoScrollListView>
 
-        <!--A simple separater-->
+        <!--A simple separator-->
         <BoxView BackgroundColor="LightGray"
                  HorizontalOptions="FillAndExpand"
                  Grid.Row="2"/>

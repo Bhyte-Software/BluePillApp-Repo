@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <!--BluePill Logo-->
-        <Frame BackgroundColor="Green" Grid.Row="0">
+        <Frame BackgroundColor="Transparent" Grid.Row="0">
             <Image/>
         </Frame>
         
@@ -31,7 +31,8 @@
                                  CornerRadius="20"
                                  Padding="0,15,0,15"
                                  Margin="0,0,0,15"
-                                 xamEffects:TouchEffect.Color="LightBlue">
+                                 xamEffects:TouchEffect.Color="LightBlue"
+                                 xamEffects:Commands.Tap="{Binding CreateNewAccountCommand}">
                 
                 <Label Text="Create a new account"
                        TextColor="#53eaf2"

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xamEffect="clr-namespace:XamEffects;assembly=XamEffects"
+             xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
+             mc:Ignorable="d"
+             x:Class="BluePillApp.Views.Signup_Views.SignupPage">
+
+    <Grid>
+        <pancake:PancakeView BackgroundGradientStartColor="#53EAF2"
+                             BackgroundGradientEndColor="#57BEFF"
+                             BackgroundGradientAngle="100">
+            <Grid RowSpacing="0"
+                  ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="430"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Sign Up/Create new account Text-->
+                <StackLayout Grid.Row="0"
+                             Spacing="0"
+                             Margin="0,20,0,0">
+                    
+                    <Label Text="Sign Up"
+                           FontSize="30"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                    
+                    <Label Text="Create a new account"
+                           FontSize="20"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <!--Entries-->
+                <pancake:PancakeView Grid.Row="1"
+                                     BackgroundColor="#F9F9F9"
+                                     CornerRadius="10"
+                                     HasShadow="True"
+                                     Margin="10,30"
+                                     Padding="15,30">
+
+
+                    <ScrollView>
+                        <StackLayout Spacing="20">
+                            <!--First Name-->
+                            <renderers:RoundedEntry Placeholder="First Name"
+                                                        PlaceholderColor="#666666"
+                                                        CornerRadius="15"
+                                                        BorderWidth="6"
+                                                        BorderColor="#999999"
+                                                        BackColor="Transparent"
+                                                        BackgroundColor="Transparent"
+                                                    HeightRequest="60"/>
+
+                            <!--Last Name-->
+                            <renderers:RoundedEntry Placeholder="Last Name"
+                                                        PlaceholderColor="#666666"
+                                                        CornerRadius="15"
+                                                        BorderWidth="6"
+                                                        BorderColor="#999999"
+                                                        BackColor="Transparent"
+                                                        BackgroundColor="Transparent"
+                                                    HeightRequest="60"/>
+
+                            <!--Phone Number-->
+                            <renderers:RoundedEntry Placeholder="Phone Number"
+                                                        PlaceholderColor="#666666"
+                                                        CornerRadius="15"
+                                                        BorderWidth="6"
+                                                        BorderColor="#999999"
+                                                        BackColor="Transparent"
+                                                        BackgroundColor="Transparent"
+                                                    HeightRequest="60"/>
+
+                            <!--Email-->
+                            <renderers:RoundedEntry Placeholder="Email"
+                                                        PlaceholderColor="#666666"
+                                                        CornerRadius="15"
+                                                        BorderWidth="6"
+                                                        BorderColor="#999999"
+                                                        BackColor="Transparent"
+                                                        BackgroundColor="Transparent"
+                                                    HeightRequest="60"/>
+
+                            <!--Password-->
+                            <renderers:RoundedEntry Placeholder="Password"
+                                                        PlaceholderColor="#666666"
+                                                        CornerRadius="15"
+                                                        BorderWidth="6"
+                                                        BorderColor="#999999"
+                                                        BackColor="Transparent"
+                                                        BackgroundColor="Transparent"
+                                                    IsPassword="True"
+                                                    HeightRequest="60"/>
+
+                            <Label Text="Already have an account? Login here"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ScrollView>
+                </pancake:PancakeView>
+
+                <!--SIGN UP Button-->
+                <pancake:PancakeView Grid.Row="2"
+                                     BackgroundColor="#0F8DF4"
+                                     HorizontalOptions="Center"
+                                     CornerRadius="10"
+                                     Padding="130,15">
+                    <Label Text="SIGN UP"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="20"/>
+                </pancake:PancakeView>
+            </Grid>
+        </pancake:PancakeView>
+    </Grid>
+</ContentPage>
