@@ -1,4 +1,5 @@
-﻿using BluePillApp.ViewModels;
+﻿using BluePillApp.Helpers;
+using BluePillApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

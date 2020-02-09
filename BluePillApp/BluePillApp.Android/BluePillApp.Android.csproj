@@ -78,8 +78,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net">
+      <Version>4.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
     </PackageReference>
     <PackageReference Include="Syn.Bot">
       <Version>3.4.0</Version>
@@ -105,6 +111,7 @@
     <Compile Include="AndroidCustomRenderers\RoundedEditorRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\CustomShellRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\RoundedEntryRenderer.cs" />
+    <Compile Include="AndroidKeyboardHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

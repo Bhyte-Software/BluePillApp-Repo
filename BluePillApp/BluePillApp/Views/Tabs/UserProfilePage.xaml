@@ -60,6 +60,7 @@
                 <!--User info-->
                 <StackLayout Grid.Column="1"
                              Grid.Row="1"
+                             VerticalOptions="Center"
                              Margin="10,-80,0,0"
                              Spacing="0">
 
@@ -67,14 +68,6 @@
                            TextColor="White"
                            FontSize="20"
                            FontAttributes="Bold"/>
-
-                    <Label Text="Location"
-                           TextColor="White"
-                           FontSize="16"/>
-
-                    <Label Text="Number"
-                           TextColor="White"
-                           FontSize="16"/>
                 </StackLayout>
 
                 <!--EDIT Label-->
@@ -191,7 +184,7 @@
                           SeparatorColor="#CCCCCC"
                           HasUnevenRows="True"
                           SelectionMode="None"
-                          Margin="0,0,0,-270">
+                          Margin="0,0,0,-280">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

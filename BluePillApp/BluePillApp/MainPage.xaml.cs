@@ -1,4 +1,5 @@
 ﻿using BluePillApp.CustomRenderers;
+using BluePillApp.Helpers;
 using BottomBar.XamarinForms;
 using System;
 using System.Collections.Generic;

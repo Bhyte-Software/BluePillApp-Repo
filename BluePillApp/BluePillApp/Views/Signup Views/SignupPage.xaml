@@ -4,12 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:xamEffect="clr-namespace:XamEffects;assembly=XamEffects"
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.Signup_Views.SignupPage">
 
     <Grid>
+        <!--Background to SignUp Page-->
         <pancake:PancakeView BackgroundGradientStartColor="#53EAF2"
                              BackgroundGradientEndColor="#57BEFF"
                              BackgroundGradientAngle="100">
@@ -17,8 +18,8 @@
                   ColumnSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="430"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <!--Sign Up/Create new account Text-->
@@ -51,52 +52,46 @@
                         <StackLayout Spacing="20">
                             <!--First Name-->
                             <renderers:RoundedEntry Placeholder="First Name"
-                                                        PlaceholderColor="#666666"
-                                                        CornerRadius="15"
-                                                        BorderWidth="6"
-                                                        BorderColor="#999999"
-                                                        BackColor="Transparent"
-                                                        BackgroundColor="Transparent"
+                                                    Text="{Binding FirstName}"
+                                                    PlaceholderColor="#666666"
+                                                    CornerRadius="15"
+                                                    BorderWidth="6"
+                                                    BorderColor="#999999"
+                                                    BackColor="Transparent"
+                                                    BackgroundColor="Transparent"
                                                     HeightRequest="60"/>
 
                             <!--Last Name-->
                             <renderers:RoundedEntry Placeholder="Last Name"
-                                                        PlaceholderColor="#666666"
-                                                        CornerRadius="15"
-                                                        BorderWidth="6"
-                                                        BorderColor="#999999"
-                                                        BackColor="Transparent"
-                                                        BackgroundColor="Transparent"
-                                                    HeightRequest="60"/>
-
-                            <!--Phone Number-->
-                            <renderers:RoundedEntry Placeholder="Phone Number"
-                                                        PlaceholderColor="#666666"
-                                                        CornerRadius="15"
-                                                        BorderWidth="6"
-                                                        BorderColor="#999999"
-                                                        BackColor="Transparent"
-                                                        BackgroundColor="Transparent"
+                                                    Text="{Binding LastName}"
+                                                    PlaceholderColor="#666666"
+                                                    CornerRadius="15"
+                                                    BorderWidth="6"
+                                                    BorderColor="#999999"
+                                                    BackColor="Transparent"
+                                                    BackgroundColor="Transparent"
                                                     HeightRequest="60"/>
 
                             <!--Email-->
                             <renderers:RoundedEntry Placeholder="Email"
-                                                        PlaceholderColor="#666666"
-                                                        CornerRadius="15"
-                                                        BorderWidth="6"
-                                                        BorderColor="#999999"
-                                                        BackColor="Transparent"
-                                                        BackgroundColor="Transparent"
+                                                    Text="{Binding Email}"
+                                                    PlaceholderColor="#666666"
+                                                    CornerRadius="15"
+                                                    BorderWidth="6"
+                                                    BorderColor="#999999"
+                                                    BackColor="Transparent"
+                                                    BackgroundColor="Transparent"
                                                     HeightRequest="60"/>
 
                             <!--Password-->
                             <renderers:RoundedEntry Placeholder="Password"
-                                                        PlaceholderColor="#666666"
-                                                        CornerRadius="15"
-                                                        BorderWidth="6"
-                                                        BorderColor="#999999"
-                                                        BackColor="Transparent"
-                                                        BackgroundColor="Transparent"
+                                                    Text="{Binding Password}"
+                                                    PlaceholderColor="#666666"
+                                                    CornerRadius="15"
+                                                    BorderWidth="6"
+                                                    BorderColor="#999999"
+                                                    BackColor="Transparent"
+                                                    BackgroundColor="Transparent"
                                                     IsPassword="True"
                                                     HeightRequest="60"/>
 
@@ -109,16 +104,22 @@
                 </pancake:PancakeView>
 
                 <!--SIGN UP Button-->
-                <pancake:PancakeView Grid.Row="2"
-                                     BackgroundColor="#0F8DF4"
-                                     HorizontalOptions="Center"
-                                     CornerRadius="10"
-                                     Padding="130,15">
-                    <Label Text="SIGN UP"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           FontSize="20"/>
-                </pancake:PancakeView>
+                <Grid Grid.Row="2">
+                    <pancake:PancakeView BackgroundColor="#0F8DF4"
+                                         HorizontalOptions="Center"
+                                         CornerRadius="10"
+                                         Padding="130,15"
+                                         VerticalOptions="Start"
+                                         Margin="0,0,0,0"
+                                         xamEffects:TouchEffect.Color="White"
+                                         xamEffects:Commands.Tap="{Binding SignUpCommand}">
+
+                        <Label Text="SIGN UP"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="20"/>
+                    </pancake:PancakeView>
+                </Grid>
             </Grid>
         </pancake:PancakeView>
     </Grid>

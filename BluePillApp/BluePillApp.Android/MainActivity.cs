@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using BluePillApp.Droid.AndroidCustomRenderers;
+using Xamarin.Forms;
 
 namespace BluePillApp.Droid
 {
@@ -15,6 +16,8 @@ namespace BluePillApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            RequestedOrientation = ScreenOrientation.Portrait;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -47,7 +50,7 @@ namespace BluePillApp.Droid
             return result;
         }
 
-        public override View CurrentFocus
+        public override Android.Views.View CurrentFocus
         {
             get
             {
