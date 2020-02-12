@@ -93,7 +93,7 @@ namespace BluePillApp.ViewModels
                 chatbot.MainUser.ResponseReceived += async (sender, args) =>
                 {
                     await Task.Delay(1500);
-                    Messages.Add(new ChatMessageModel() { Text = args.Response.Text });
+                    Messages.Add(new ChatMessageModel() { Text = args.Response.Text, User = App.ChatBot });
                 };
 
                 var result = chatbot.Evaluate(TextToSend);
