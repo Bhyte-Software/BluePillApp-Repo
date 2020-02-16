@@ -73,10 +73,17 @@ namespace BluePillApp.ViewModels
 
             chatbot = new OscovaBot();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("BluePillApp.Helpers.nice.siml");
+            Stream stream = assembly.GetManifestResourceStream("BluePillApp.Helpers.new.siml");
 
             chatbot.Import(XDocument.Load(stream));
             chatbot.Trainer.StartTraining();
+
+            //This gets the chatbots response for each message
+            chatbot.MainUser.ResponseReceived += async (sender, args) =>
+            {
+                await Task.Delay(1500);
+                Messages.Add(new ChatMessageModel() { Text = args.Response.Text, User = App.ChatBot });
+            };
         }
 
         /// <summary>
@@ -86,16 +93,11 @@ namespace BluePillApp.ViewModels
         {
             if (!string.IsNullOrEmpty(TextToSend))
             {
+                var msgModel = new ChatMessageModel() { Text = TextToSend, User = App.User };
+
                 //This adds a new message to the messages collection
-                Messages.Add(new ChatMessageModel() { Text = TextToSend, User = App.User });
-
-                //This gets the chatbots response for each message
-                chatbot.MainUser.ResponseReceived += async (sender, args) =>
-                {
-                    await Task.Delay(1500);
-                    Messages.Add(new ChatMessageModel() { Text = args.Response.Text, User = App.ChatBot });
-                };
-
+                Messages.Add(msgModel);
+                
                 var result = chatbot.Evaluate(TextToSend);
                 result.Invoke();
 
