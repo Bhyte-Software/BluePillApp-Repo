@@ -25,6 +25,7 @@ namespace BluePillApp.Droid
             base.OnCreate(savedInstanceState);
 
             XamEffects.Droid.Effects.Init();
+            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental"); // Allow usage of CollectionView
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

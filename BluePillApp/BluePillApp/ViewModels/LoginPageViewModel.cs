@@ -75,9 +75,10 @@ namespace BluePillApp.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert("Test", "Fill in all fields", "OK");
             }
+
             else
             {
-                //call GetUser function which we define in Firebase helper class    
+                //call GetUser function which we define in FirebaseHelper
                 var user = await FirebaseHelper.GetUser(Email, Password);
                 
                 if (user != null)

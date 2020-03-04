@@ -22,6 +22,7 @@ namespace BluePillApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental"); // Allow usage of CollectionView
             global::Xamarin.Forms.Forms.Init();
             XamEffects.iOS.Effects.Init();
             LoadApplication(new App());

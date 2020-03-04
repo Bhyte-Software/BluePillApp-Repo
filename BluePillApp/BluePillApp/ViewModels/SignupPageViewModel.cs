@@ -113,7 +113,10 @@ namespace BluePillApp.ViewModels
         {
             // If the fields are empty
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
+            {
                 await App.Current.MainPage.DisplayAlert("Empty Values", "Please make sure to fill in all the spaces", "OK");
+            }
+
             else
             {
                 var user = await FirebaseHelper.AddUser(FirstName, LastName, Email, Password);
@@ -130,6 +133,7 @@ namespace BluePillApp.ViewModels
                     FirstName = string.Empty;
                     LastName = string.Empty;
                 }
+
                 else
                 {
                     await App.Current.MainPage.DisplayAlert("Error", "We ran into an error whiles signing up, please check your network", "OK");

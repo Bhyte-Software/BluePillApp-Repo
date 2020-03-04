@@ -111,15 +111,12 @@
                 <!--  Back Arrow Button  -->
                 <renderers:FontAwesomeIcon
                     Margin="20,0,10,0"
+                    xamEffects:Commands.Tap="{Binding BackArrowCommand}"
                     FontSize="20"
                     HorizontalOptions="Start"
                     Text="{x:Static helpers:IconsFA.BackArrow}"
                     TextColor="Black"
-                    VerticalTextAlignment="Center">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="BacktoMain_Button" />
-                    </Label.GestureRecognizers>
-                </renderers:FontAwesomeIcon>
+                    VerticalTextAlignment="Center" />
 
                 <!--  Fleming Image  -->
                 <StackLayout Orientation="Horizontal">

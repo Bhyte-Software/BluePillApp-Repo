@@ -1,4 +1,5 @@
-﻿using BluePillApp.Models;
+﻿using BluePillApp.Controls;
+using BluePillApp.Models;
 using BluePillApp.ViewModels;
 using Newtonsoft.Json;
 using System;
@@ -26,14 +27,6 @@ namespace BluePillApp.Views
 
             //Sets the top tab bar invisible
             Shell.SetTabBarIsVisible(this, false);
-        }
-
-        private void BacktoMain_Button(object sender, EventArgs e)
-        {
-            TabBar bar = Shell.Current.Items[0] as TabBar;
-
-            //Select the first Tab
-            bar.CurrentItem = bar.Items[0];
         }
     }
 }

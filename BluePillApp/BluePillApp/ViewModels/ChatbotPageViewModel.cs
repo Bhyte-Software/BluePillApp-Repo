@@ -14,6 +14,9 @@ using System.Reflection;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Threading;
+using BluePillApp.Controls;
+using BluePillApp.Views;
 
 namespace BluePillApp.ViewModels
 {
@@ -22,11 +25,6 @@ namespace BluePillApp.ViewModels
     /// </summary>
     public class ChatbotPageViewModel : BaseViewModel
     {
-        /// <summary>
-        /// A field for TextToSend
-        /// </summary>
-        private string _texttosend;
-
         /// <summary>
         /// An Instance of a new SIML Oscova Chatbot
         /// </summary>
@@ -40,6 +38,7 @@ namespace BluePillApp.ViewModels
         /// <summary>
         /// The text that the user inputs
         /// </summary>
+        private string _texttosend;
         public string TextToSend
         {
             get
@@ -52,9 +51,26 @@ namespace BluePillApp.ViewModels
                 if (_texttosend != value)
                 {
                     _texttosend = value;
-
                     OnPropertyChanged();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Boolean for showing whether ActivityIndicator is busy
+        /// </summary>
+        private bool _isbusy;
+        public bool IsBusy
+        {
+            get
+            {
+                return _isbusy;
+            }
+
+            set
+            {
+                _isbusy = value;
+                OnPropertyChanged();
             }
         }
 
@@ -63,6 +79,11 @@ namespace BluePillApp.ViewModels
         /// </summary>
         public ICommand SendCommand { get; set; }
 
+        /// <summary>
+        /// A command for the back arrow
+        /// </summary>
+        public ICommand BackArrowCommand { get; set; }
+
 
         /// <summary>
         /// ChatPageViewModel Constructor
@@ -70,6 +91,7 @@ namespace BluePillApp.ViewModels
         public ChatbotPageViewModel()
         {
             SendCommand = new RelayCommand(Send);
+            BackArrowCommand = new RelayCommand(Back);
 
             chatbot = new OscovaBot();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
@@ -83,9 +105,11 @@ namespace BluePillApp.ViewModels
             {
                 await Task.Delay(1500);
                 Messages.Add(new ChatMessageModel() { Text = args.Response.Text, User = App.ChatBot });
+                IsBusy = false;
             };
         }
 
+        #region CLASS METHODS
         /// <summary>
         /// This function sends a message
         /// </summary>
@@ -103,7 +127,20 @@ namespace BluePillApp.ViewModels
 
                 //Removes the text in the Entry after message is sent
                 TextToSend = string.Empty;
+                IsBusy = true;
             }
         }
+
+        /// <summary>
+        /// Takes you back to the MainPage
+        /// </summary>
+        public void Back()
+        {
+            TabBar bar = Shell.Current.Items[0] as TabBar;
+
+            //Select the first Tab
+            bar.CurrentItem = bar.Items[0];
+        }
+        #endregion
     }
 }
