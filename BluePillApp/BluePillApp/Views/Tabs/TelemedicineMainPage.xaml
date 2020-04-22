@@ -7,7 +7,6 @@
              xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
              xmlns:helpers="clr-namespace:BluePillApp.Helpers"
              xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
-             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.TelemedicineMainPage">
 
@@ -15,8 +14,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="2"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TeleMED Header-->
@@ -24,7 +21,7 @@
                              BackgroundColor="#f7f7f7"
                              HasShadow="True"
                              Padding="15">
-            
+
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="End">
                 <Label Text="TeleMED"
@@ -46,124 +43,149 @@
                                            Margin="0,3,0,0"/>
             </StackLayout>
         </pancake:PancakeView>
-        
-        <!--My Doctors-->
-        <Grid Grid.Row="1"
-              ColumnSpacing="0"
-              RowSpacing="0">
-            <CollectionView ItemsSource="{Binding RecentDoctors}"
-                            HeightRequest="90"
-                            Margin="10,0,0,0">
 
-                <CollectionView.ItemsLayout>
-                    <ListItemsLayout Orientation="Horizontal"
-                                     ItemSpacing="30"/>
-                </CollectionView.ItemsLayout>
+        <!--MAIN-->
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 
-            <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <pancake:PancakeView BackgroundColor="Gray"
-                                                 CornerRadius="100"
-                                                 WidthRequest="70"
-                                                 HeightRequest="70"
-                                                 HorizontalOptions="Start"
-                                                 VerticalOptions="Center">
+                    <!--My Doctors-->
+                    <Grid Grid.Row="0"
+                          ColumnSpacing="0"
+                          RowSpacing="0">
+                        <CollectionView ItemsSource="{Binding MyDoctors}"
+                                        HeightRequest="90">
+
+                            <CollectionView.ItemsLayout>
+                                <ListItemsLayout Orientation="Horizontal"
+                                                 ItemSpacing="20"/>
+                            </CollectionView.ItemsLayout>
+                
+                        <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                        
+                                    <!--My Doctors Image Container-->
+                                    <Grid>
+                                        <pancake:PancakeView BackgroundColor="Gray"
+                                                             CornerRadius="100"
+                                                             WidthRequest="65"
+                                                             HeightRequest="65"
+                                                             HorizontalOptions="Start"
+                                                             VerticalOptions="Center"
+                                                             Margin="10,0,0,0">
                                 
-                                <Image HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
-                            </pancake:PancakeView>
+                                            <!--My Doctors Image-->
+                                            <Image HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </pancake:PancakeView>
 
-                            <pancake:PancakeView BackgroundColor="Red"
-                                                 BorderColor="White"
-                                                 BorderThickness="3"
-                                                 CornerRadius="100"
-                                                 HeightRequest="15"
-                                                 WidthRequest="15"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="End"
-                                                 Margin="50,0,0,15"/>
-
-
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-        
-        <!--A simple seperator-->
-        <pancake:PancakeView Grid.Row="2"
-                             BackgroundColor="#cccccc"
-                             Margin="15,0,15,0"
-                             HasShadow="False"/>
-
-        <!--Recent Doctors List-->
-        <CollectionView Grid.Row="3"
-                        ItemsSource="{Binding RecentDoctors}">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid ColumnSpacing="0"
-                          RowSpacing="0"
-                          Padding="0,10,0,10">
-
-                        <!--Recent Doctors Item Template-->
-                        <pancake:PancakeView BackgroundColor="#F2F2F2"
-                                             HasShadow="True"
-                                             Elevation="5"
-                                             CornerRadius="10"
-                                             Margin="7,0"
-                                             Padding="20,5,0,5">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                
-                                <!--Doctors Image-->
-                                <Frame Grid.Column="0" 
-                                       BackgroundColor="#CCCCCC"
-                                       IsClippedToBounds="True"
-                                       Padding="0"
-                                       HasShadow="False"
-                                       CornerRadius="100"
-                                       HeightRequest="80">
-
-                                    <Image HorizontalOptions="Center"
-                                           VerticalOptions="Center"/>
-                                </Frame>
-
-                                <!--Doctors Info-->
-                                <StackLayout Grid.Column="1"
-                                             VerticalOptions="Center"
-                                             Spacing="0">
-                                    
-                                    <!--Doctors Name Label-->
-                                    <Label Text="{Binding DoctorsName}"
-                                           TextColor="Black"
-                                           FontAttributes="Bold"
-                                           FontSize="17"/>
-                                    
-                                    <!--Specialization Label-->
-                                    <Label Text="{Binding Specialization}"
-                                           TextColor="Black"
-                                           FontAttributes="Bold"
-                                           FontSize="17"/>
-                                    
-                                    <!--Location Label-->
-                                    <Label Text="{Binding Location}"
-                                           TextColor="#999999"
-                                           FontSize="12"/>
-                                </StackLayout>
-                            </Grid>
-                        </pancake:PancakeView>
+                                        <!--Online Status Indicator-->
+                                    <pancake:PancakeView BackgroundColor="Red"
+                                                         BorderColor="White"
+                                                         BorderThickness="3"
+                                                         CornerRadius="100"
+                                                         HeightRequest="15"
+                                                         WidthRequest="15"
+                                                         HorizontalOptions="Center"
+                                                         VerticalOptions="End"
+                                                         Margin="60,0,0,15"/>
+                                </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
                     </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
         
+                    <!--A simple seperator-->
+                    <pancake:PancakeView Grid.Row="1"
+                                         BackgroundColor="#cccccc"
+                                         Margin="15,0,15,0"
+                                         HasShadow="False"/>
+
+                    <!--Recent Doctors List-->
+                <CollectionView Grid.Row="2"
+                                ItemsSource="{Binding RecentDoctors}">
+
+                    <!--No Doctors Label/EmptyView-->
+                    <CollectionView.EmptyView>
+                        <StackLayout>
+                            <Label Text="You Currently Have No Recent Doctors"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   Margin="0,150,0,0"
+                                   HorizontalOptions="Fill"
+                                   HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+
+                    <CollectionView.ItemTemplate>
+                              <DataTemplate>
+                                    <Grid ColumnSpacing="0"
+                                      RowSpacing="0"
+                                      Padding="0,10,0,10">
+
+                                        <!--Recent Doctors Item Template-->
+                                        <pancake:PancakeView BackgroundColor="#F2F2F2"
+                                                         HasShadow="True"
+                                                         Elevation="5"
+                                                         CornerRadius="10"
+                                                         Margin="7,0"
+                                                         Padding="20,5,0,5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <!--Doctors Image-->
+                                                <Frame Grid.Column="0" 
+                                                   BackgroundColor="#CCCCCC"
+                                                   IsClippedToBounds="True"
+                                                   Padding="0"
+                                                   HasShadow="False"
+                                                   CornerRadius="100"
+                                                   HeightRequest="80">
+
+                                                    <Image HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                                </Frame>
+
+                                                <!--Doctors Info-->
+                                                <StackLayout Grid.Column="1"
+                                                         VerticalOptions="Center"
+                                                         Spacing="0">
+
+                                                    <!--Doctors Name Label-->
+                                                    <Label Text="{Binding DoctorsName}"
+                                                       TextColor="Black"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+
+                                                    <!--Specialization Label-->
+                                                    <Label Text="{Binding Specialization}"
+                                                       TextColor="Black"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+
+                                                    <!--Location Label-->
+                                                    <Label Text="{Binding Location}"
+                                                       TextColor="#999999"
+                                                       FontSize="12"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </pancake:PancakeView>
+                                    </Grid>
+                                </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+
         <!--Add Doctors Button-->
-        <pancake:PancakeView Grid.Row="3" 
+        <pancake:PancakeView Grid.Row="1" 
                              BackgroundColor="#0F8DF4"
                              HasShadow="True"
                              CornerRadius="100"

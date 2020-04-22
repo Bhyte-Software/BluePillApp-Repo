@@ -18,6 +18,18 @@ namespace BluePillApp.Controls
             InitializeComponent();
 
             BindingContext = new ChatMessageModel();
+
+            _ = ChangeVisibilityAsync();
+        }
+
+        public async Task ChangeVisibilityAsync()
+        {
+            messageBubble.IsVisible = false;
+            chatbotMessageIndicator.IsVisible = true;
+            await Task.Delay(1000);
+            messageBubble.IsVisible = true;
+            chatbotMessageIndicator.IsVisible = false;
+            chatbotMessageIndicator.IsRunning = false;
         }
     }
 }

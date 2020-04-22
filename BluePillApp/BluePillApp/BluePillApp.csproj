@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Helpers\h.simlpk" />
     <None Remove="Helpers\new.siml" />
+    <None Remove="Helpers\new2.siml" />
+    <None Remove="Helpers\new3.siml" />
     <None Remove="Helpers\nice.siml" />
   </ItemGroup>
 
@@ -24,12 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Styles\" />
+    <Folder Include="Misc\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\new.siml" />
-    <EmbeddedResource Include="Helpers\nice.siml" />
+    <EmbeddedResource Include="Helpers\h.simlpk" />
+    <EmbeddedResource Include="Helpers\new2.siml" />
+    <EmbeddedResource Include="Helpers\new3.siml" />
   </ItemGroup>
 
   <ItemGroup>

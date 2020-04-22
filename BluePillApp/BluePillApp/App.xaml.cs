@@ -11,7 +11,7 @@ namespace BluePillApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ChatbotPage();
         }
 
         //String for the message user

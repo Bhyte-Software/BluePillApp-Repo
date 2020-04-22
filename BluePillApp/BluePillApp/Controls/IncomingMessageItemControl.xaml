@@ -11,6 +11,7 @@
 
     <Grid x:Name="Gridoo">
         <pancake:PancakeView
+            x:Name="messageBubble"
             Margin="10,10,80,10"
             Padding="15"
             BackgroundColor="#53ffc6"
@@ -24,6 +25,8 @@
                 TextColor="#1a1a1a" />
         </pancake:PancakeView>
 
-        <ActivityIndicator IsRunning="True" IsVisible="True" />
+        <ActivityIndicator x:Name="chatbotMessageIndicator" 
+                           IsRunning="True"
+                           HorizontalOptions="Start"/>
     </Grid>
 </ViewCell>

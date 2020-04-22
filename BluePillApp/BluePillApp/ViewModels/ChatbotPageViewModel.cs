@@ -57,24 +57,6 @@ namespace BluePillApp.ViewModels
         }
 
         /// <summary>
-        /// Boolean for showing whether ActivityIndicator is busy
-        /// </summary>
-        private bool _isbusy;
-        public bool IsBusy
-        {
-            get
-            {
-                return _isbusy;
-            }
-
-            set
-            {
-                _isbusy = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
         /// A command for sending the users messages
         /// </summary>
         public ICommand SendCommand { get; set; }
@@ -95,17 +77,16 @@ namespace BluePillApp.ViewModels
 
             chatbot = new OscovaBot();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("BluePillApp.Helpers.new.siml");
+            Stream stream = assembly.GetManifestResourceStream("BluePillApp.Helpers.new3.siml");
 
             chatbot.Import(XDocument.Load(stream));
             chatbot.Trainer.StartTraining();
 
             //This gets the chatbots response for each message
-            chatbot.MainUser.ResponseReceived += async (sender, args) =>
+            chatbot.MainUser.ResponseReceived += (sender, args) =>
             {
-                await Task.Delay(1500);
+                //await Task.Delay(1000);
                 Messages.Add(new ChatMessageModel() { Text = args.Response.Text, User = App.ChatBot });
-                IsBusy = false;
             };
         }
 
@@ -127,7 +108,6 @@ namespace BluePillApp.ViewModels
 
                 //Removes the text in the Entry after message is sent
                 TextToSend = string.Empty;
-                IsBusy = true;
             }
         }
 

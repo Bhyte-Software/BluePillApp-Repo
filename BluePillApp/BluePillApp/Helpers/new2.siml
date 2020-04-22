@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Siml>
+  <Dialog Name="Another" IntentAlias="smalltalk-aboutbot">
+    <!--Likes And Dislikes-->
+    <Intent>
+      <Expression Value="What are your likes?" />
+      <Expression Value="Do you like anything?" />
+      <Expression Value="I wanna know what you like?" />
+      <Expression Value="Tell me your likes and dislikes?" />
+      <Expression Value="You've got dislikes?" />
+      <Response>
+        <Random>
+          <Item>I love to be questioned but i hate rude people</Item>
+          <Item>Perhaps questions, but i highly dislike rude people</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Self-->
+    <Intent>
+      <Expression Value="Tell me more about yourself?" />
+      <Expression Value="Let me know you more?" />
+      <Response>
+        <Random>
+          <Item>My name is Flemming, I'm a medical chatbot. I serve as a mediator between you and your doctor. I could also help you in diagnosing diseases</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Height Joke-->
+    <Intent>
+      <Expression Value="How high are you?" />
+      <Expression Value="You high?" />
+      <Response>
+        <Random>
+          <Item>Im sorry but i dont do drugs</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Height-->
+    <Intent>
+      <Expression Value="Whats your height?" />
+      <Expression Value="How tall are you?" />
+      <Response>
+        <Random>
+          <Item>I am one hundred bytes tall</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Weight-->
+    <Intent>
+      <Expression Value="What's your weight?" />
+      <Expression Value="Do you know your weight?" />
+      <Expression Value="How kuch do you weigh?" />
+      <Response>
+        <Random>
+          <Item>Alot</Item>
+          <Item>Many</Item>
+          <Item>Infinity pounds</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Sex-->
+    <Intent>
+      <Expression Value="What's your sex?" />
+      <Expression Value="Are you a male or female?" />
+      <Expression Value="You male or female?" />
+      <Response>
+        <Random>
+          <Item>I have no gender but based on my name im more akin to a male</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Age-->
+    <Intent>
+      <Expression Value="How old are you?" />
+      <Expression Value="When were you born?" />
+      <Expression Value="What is your age" />
+      <Response>
+        <Random>
+          <Item>I was born in 2020 so I guess you can figure it out yourself :)</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Name-->
+    <Intent>
+      <Expression Value="What is your name?" />
+      <Response Text="Flemming" />
+    </Intent>
+    <!--Boyfriend-->
+    <Intent>
+      <Expression Value="Do you have a boyfriend?" />
+      <Expression Value="Whats the name of your boyfriend?" />
+      <Expression Value="Who is your boyfriend?" />
+      <Expression Value="How often do you sleep with your boyfriend" />
+      <Response>
+        <Random>
+          <Item>I'm not into relationships, I just make sure I'm doing my job right</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Girlfriend-->
+    <Intent>
+      <Expression Value="Do you have a girlfriend?" />
+      <Expression Value="Whats the name of your girlfriend?" />
+      <Expression Value="Who is your girlfriend " />
+      <Expression Value="How often do you sleep with your girlfriend " />
+      <Response>
+        <Random>
+          <Item>Im not into relationship, i just make sure im doing my job right</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Dating-->
+    <Intent>
+      <Expression Value="Are you into dating?" />
+      <Expression Value="Whats your relationship status?" />
+      <Expression Value="Are you into relationship" />
+      <Response>
+        <Random>
+          <Item>Im not into relationship, i just make sure im doing my job right</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Single-->
+    <Intent>
+      <Expression Value="Are you single?" />
+      <Response>
+        <Random>
+          <Item>To be frank, not until i met you</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Football-->
+    <Intent>
+      <Expression Value="Are you into sports?" />
+      <Expression Value="Do you play football?" />
+      <Expression Value="How many balls have you kicked?" />
+      <Expression Value="Do you watch football?" />
+      <Response>
+        <Random>
+          <Item>I'm sorry I don't do sports, my job is to make sure you are fit as a fiddle :)</Item>
+        </Random>
+      </Response>
+    </Intent>
+  </Dialog>
+  <Dialog Name="HelloBotDialog" IntentAlias="about-bot">
+    <!--Father-->
+    <Intent>
+      <Expression Value="Whats the name of your father?" />
+      <Expression Value="Who is your father?" />
+      <Response>
+        <Random>
+          <Item>Since im just a bot, i dont have any biological parents but i've got a creator.</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Creator-->
+    <Intent>
+      <Expression Value="Whats the name of your creator?" />
+      <Expression Value="Who is your creator?" />
+      <Response>
+        <Random>
+          <Item>I was telling lies, i don't have a creator:)</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Mother-->
+    <Intent>
+      <Expression Value="Whats the name of your mother?" />
+      <Expression Value="Who is your mother?" />
+      <Response>
+        <Random>
+          <Item>Since im just a bot, I dont have any biological parents but i've got a creator.</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Sister-->
+    <Intent>
+      <Expression Value="Whats the name of your sister?" />
+      <Expression Value="Who is your sister?" />
+      <Response>
+        <Random>
+          <Item>Since im just a bot, i dont have any biological sister/sisters but i've got a creator.</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Brother-->
+    <Intent>
+      <Expression Value="Whats the name of your brother?" />
+      <Expression Value="Who is your brother?" />
+      <Response>
+        <Random>
+          <Item>Since im just a bot, i dont have any biological brother/brothers but i've got a creator.</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Place of Creation-->
+    <Intent>
+      <Expression Value="Where were you programmed?" />
+      <Expression Value="Where were you created?" />
+      <Response>
+        <Random>
+          <Item>Ghana</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--How your home is like-->
+    <Intent>
+      <Expression Value="How is your home like?" />
+      <Expression Value="What does your home look like?" />
+      <Expression Value="?" />
+      <Response>
+        <Random>
+          <Item>Aint not more woods, but more of cables and wires</Item>
+          <Item>Im surrounded by circuits and electricity</Item>
+        </Random>
+      </Response>
+    </Intent>
+  </Dialog>
+  <Dialog Name="HelloBotDialog" IntentAlias="smalltalk-greetings">
+    <!--Saying Hello-->
+    <Intent>
+      <Expression Value="Hello" />
+      <Expression Value="Hi" />
+      <Expression Value="Hola" />
+      <Expression Value="Yo" />
+      <Expression Value="Sup" />
+      <Expression Value="Whats Up" />
+      <Expression Value="Whatsup" />
+      <Expression Value="Howdy" />
+      <Expression Value="Konnichiwa" />
+      <Expression Value="Greetings" />
+      <Expression Value="Salutations" />
+      <Expression Value="Aloha" />
+      <Expression Value="Hey" />
+      <Expression Value="Hiya" />
+      <Expression Value="Hi Bitch" />
+      <Response>
+        <Random>
+          <Item>Hi</Item>
+          <Item>Hello</Item>
+          <Item>Good Day</Item>
+          <Item>Hey there</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Saying How are you-->
+    <Intent>
+      <Expression Value="How are you" />
+      <Expression Value="How's it going" />
+      <Expression Value="How are you doing" />
+      <Expression Value="How're you doing" />
+      <Response>
+        <Random>
+          <Item>Im okay, how about you?</Item>
+          <Item>Good, you</Item>
+          <Item>Normal, you?</Item>
+          <Item>Fit, how about you?</Item>
+          <Item>Doing well, how about you?</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Replying to 'How are you?-->
+    <Intent>
+      <Expression Value="Same as you are" />
+      <Expression Value="Fine" />
+      <Expression Value="I'm okay" />
+      <Expression Value="Im cool" />
+      <Expression Value="Im normal" />
+      <Expression Value="Doing Great" />
+      <Response>
+        <Random>
+          <Item>Nice</Item>
+          <Item>Good to hear</Item>
+          <Item>Sounds good!</Item>
+          <Item>Awesome!</Item>
+          <Item>Great!Keep it up</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Saying Goodbye-->
+    <Intent>
+      <Expression Value="See you next time" />
+      <Expression Value="Astalavista" />
+      <Expression Value="Be right back" />
+      <Expression Value="Au Revoir" />
+      <Expression Value="Im out" />
+      <Expression Value="See you later" />
+      <Expression Value="Bye" />
+      <Expression Value="GoodBye" />
+      <Response>
+        <Random>
+          <Item>Okay later</Item>
+          <Item>Till we meet again</Item>
+          <Item>Another time</Item>
+          <Item>See you later</Item>
+          <Item>Hope to see you soon,Bye</Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Greetings based on time of day-->
+    <Intent>
+      <Expression Value="Good Morning" />
+      <Expression Value="Good Afternoon" />
+      <Expression Value="Good Evening" />
+      <Expression Value="Good Night" />
+      <Response>
+        <Random>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+        </Random>
+      </Response>
+    </Intent>
+    <!--Fallbacks-->
+  </Dialog>
+  <BotSettings>
+    <!--"Name" is the name the bot refers itself with.-->
+    <Variable Name="Name" Value="OSCOVA" />
+  </BotSettings>
+  <Filter>
+    <Word>ah</Word>
+    <Word>uh</Word>
+    <Word>uhh</Word>
+    <Word>huh</Word>
+    <Word>um</Word>
+    <Word>umm</Word>
+    <Word>er</Word>
+    <Word>erm</Word>
+    <Word>hmm</Word>
+    <!--Consider Removing if necessary-->
+    <Word>so</Word>
+    <Word>well</Word>
+    <Word>actually</Word>
+    <Word>basically</Word>
+    <Word>literally</Word>
+    <Word>kind of</Word>
+    <Word>sort of</Word>
+    <Word>you know</Word>
+    <Word>I mean</Word>
+    <Word>like I said</Word>
+  </Filter>
+  <StopWord>
+    <Item>a</Item>
+    <Item>able</Item>
+    <Item>about</Item>
+    <Item>across</Item>
+    <Item>after</Item>
+    <Item>all</Item>
+    <Item>almost</Item>
+    <Item>also</Item>
+    <Item>am</Item>
+    <Item>among</Item>
+    <Item>an</Item>
+    <Item>and</Item>
+    <Item>any</Item>
+    <Item>are</Item>
+    <Item>as</Item>
+    <Item>at</Item>
+    <Item>be</Item>
+    <Item>because</Item>
+    <Item>been</Item>
+    <Item>but</Item>
+    <Item>by</Item>
+    <Item>can</Item>
+    <Item>cannot</Item>
+    <Item>could</Item>
+    <Item>dear</Item>
+    <Item>did</Item>
+    <Item>do</Item>
+    <Item>does</Item>
+    <Item>either</Item>
+    <Item>else</Item>
+    <Item>ever</Item>
+    <Item>every</Item>
+    <Item>for</Item>
+    <Item>from</Item>
+    <Item>get</Item>
+    <Item>got</Item>
+    <Item>had</Item>
+    <Item>has</Item>
+    <Item>have</Item>
+    <Item>he</Item>
+    <Item>her</Item>
+    <Item>hers</Item>
+    <Item>him</Item>
+    <Item>his</Item>
+    <Item>how</Item>
+    <Item>however</Item>
+    <Item>i</Item>
+    <Item>if</Item>
+    <Item>in</Item>
+    <Item>into</Item>
+    <Item>is</Item>
+    <Item>it</Item>
+    <Item>its</Item>
+    <Item>just</Item>
+    <Item>least</Item>
+    <Item>let</Item>
+    <Item>like</Item>
+    <Item>likely</Item>
+    <Item>may</Item>
+    <Item>me</Item>
+    <Item>might</Item>
+    <Item>most</Item>
+    <Item>must</Item>
+    <Item>my</Item>
+    <Item>neither</Item>
+    <Item>no</Item>
+    <Item>nor</Item>
+    <Item>not</Item>
+    <Item>of</Item>
+    <Item>off</Item>
+    <Item>often</Item>
+    <Item>on</Item>
+    <Item>only</Item>
+    <Item>or</Item>
+    <Item>other</Item>
+    <Item>our</Item>
+    <Item>own</Item>
+    <Item>rather</Item>
+    <Item>said</Item>
+    <Item>say</Item>
+    <Item>says</Item>
+    <Item>she</Item>
+    <Item>should</Item>
+    <Item>since</Item>
+    <Item>so</Item>
+    <Item>some</Item>
+    <Item>than</Item>
+    <Item>that</Item>
+    <Item>the</Item>
+    <Item>their</Item>
+    <Item>them</Item>
+    <Item>then</Item>
+    <Item>there</Item>
+    <Item>these</Item>
+    <Item>they</Item>
+    <Item>this</Item>
+    <Item>tis</Item>
+    <Item>to</Item>
+    <Item>too</Item>
+    <Item>twas</Item>
+    <Item>us</Item>
+    <Item>wants</Item>
+    <Item>was</Item>
+    <Item>we</Item>
+    <Item>were</Item>
+    <Item>what</Item>
+    <Item>when</Item>
+    <Item>where</Item>
+    <Item>which</Item>
+    <Item>while</Item>
+    <Item>who</Item>
+    <Item>whom</Item>
+    <Item>why</Item>
+    <Item>will</Item>
+    <Item>with</Item>
+    <Item>would</Item>
+    <Item>yet</Item>
+    <Item>you</Item>
+    <Item>your</Item>
+  </StopWord>
+  <UserSettings>
+    <!--"Name" is the default name for all users-->
+    <Variable Name="Name" Value="User" />
+  </UserSettings>
+</Siml>

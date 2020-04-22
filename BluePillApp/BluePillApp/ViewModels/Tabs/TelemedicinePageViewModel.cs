@@ -10,17 +10,22 @@ namespace BluePillApp.ViewModels.Tabs
 {
     public class TelemedicinePageViewModel : BaseViewModel
     {
+        #region PROPERTIES
         /// <summary>
-        /// Collection of RecentDoctorsIfo
+        /// Collection of RecentDoctorsInfo
         /// </summary>
         public ObservableCollection<RecentDoctorsInfo> RecentDoctors { get; set; } = new ObservableCollection<RecentDoctorsInfo>();
 
         /// <summary>
-        /// To show whether the user has any doctors on his recent list
+        /// Collection of MyDoctorsInfo
         /// </summary>
-        public bool HasAnyRecents { get; set; }
+        public ObservableCollection<MyDoctorsInfo> MyDoctors { get; set; } = new ObservableCollection<MyDoctorsInfo>();
 
+        /// <summary>
+        /// Command for adding new 
+        /// </summary>
         public ICommand AddDoctorCommand { get; set; }
+        #endregion
 
         /// <summary>
         /// Main Constructor for the class
@@ -29,11 +34,29 @@ namespace BluePillApp.ViewModels.Tabs
         {
             AddDoctorCommand = new RelayCommand(AddDoctor);
 
-            RecentDoctors.Add(new RecentDoctorsInfo()
+            MyDoctors.Add(new MyDoctorsInfo()
             {
-                DoctorsName = "Steven Strange",
-                Specialization = "Sorcerer Supreme",
-                Location = "177a Bleecker St. | USA"
+                None = "none"
+            });
+            MyDoctors.Add(new MyDoctorsInfo()
+            {
+                None = "none"
+            });
+            MyDoctors.Add(new MyDoctorsInfo()
+            {
+                None = "none"
+            });
+            MyDoctors.Add(new MyDoctorsInfo()
+            {
+                None = "none"
+            });
+            MyDoctors.Add(new MyDoctorsInfo()
+            {
+                None = "none"
+            });
+            MyDoctors.Add(new MyDoctorsInfo()
+            {
+                None = "none"
             });
         }
 
