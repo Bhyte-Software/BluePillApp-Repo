@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Helpers\h.simlpk" />
     <None Remove="Helpers\new.siml" />
     <None Remove="Helpers\new2.siml" />
     <None Remove="Helpers\new3.siml" />
@@ -31,8 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\h.simlpk" />
-    <EmbeddedResource Include="Helpers\new2.siml" />
+    <EmbeddedResource Include="Helpers\new2.siml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Helpers\new3.siml" />
   </ItemGroup>
 
@@ -68,6 +68,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Tabs\UserProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Telemedicine Views\DoctorsProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Telemedicine Views\TelemedSearchPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

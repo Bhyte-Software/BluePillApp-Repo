@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TeleMED Header-->
@@ -115,7 +116,7 @@
                             <Label Text="You Currently Have No Recent Doctors"
                                    FontSize="14"
                                    TextColor="Gray"
-                                   Margin="0,150,0,0"
+                                   Margin="0,200,0,0"
                                    HorizontalOptions="Fill"
                                    HorizontalTextAlignment="Center"/>
                         </StackLayout>
@@ -183,8 +184,9 @@
                 </CollectionView>
             </Grid>
         </ScrollView>
+        
 
-        <!--Add Doctors Button-->
+        <!--Add New Doctors Button-->
         <pancake:PancakeView Grid.Row="1" 
                              BackgroundColor="#0F8DF4"
                              HasShadow="True"
@@ -196,7 +198,7 @@
                              HorizontalOptions="End"
                              Margin="0,0,10,20"
                              xamEffects:TouchEffect.Color="White"
-                             xamEffects:Commands.Tap="{Binding AddDoctorCommand}">
+                             xamEffects:Commands.Tap="{Binding GoToSearchPageCommand}">
 
             <!--Plus Icon-->
             <renderers:FontAwesomeIcon Text="{x:Static helpers:IconsFA.Plus}"

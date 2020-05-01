@@ -1,10 +1,13 @@
 ﻿using BluePillApp.Models;
 using BluePillApp.ViewModels.Base;
+using BluePillApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BluePillApp.ViewModels.Tabs
 {
@@ -25,6 +28,11 @@ namespace BluePillApp.ViewModels.Tabs
         /// Command for adding new 
         /// </summary>
         public ICommand AddDoctorCommand { get; set; }
+
+        /// <summary>
+        /// Command for navigating to the search page
+        /// </summary>
+        public ICommand GoToSearchPageCommand { get; set; }
         #endregion
 
         /// <summary>
@@ -33,15 +41,8 @@ namespace BluePillApp.ViewModels.Tabs
         public TelemedicinePageViewModel()
         {
             AddDoctorCommand = new RelayCommand(AddDoctor);
+            GoToSearchPageCommand = new RelayCommand(async () => await GoToSearchPage());
 
-            MyDoctors.Add(new MyDoctorsInfo()
-            {
-                None = "none"
-            });
-            MyDoctors.Add(new MyDoctorsInfo()
-            {
-                None = "none"
-            });
             MyDoctors.Add(new MyDoctorsInfo()
             {
                 None = "none"
@@ -64,12 +65,17 @@ namespace BluePillApp.ViewModels.Tabs
 
         public void AddDoctor()
         {
-            RecentDoctors.Add(new RecentDoctorsInfo() 
-            { 
-                DoctorsName = "Steven Strange",
-                Specialization = "Sorcerer Supreme",
-                Location = "177a Bleecker St. | USA"
-            });
+            //RecentDoctors.Add(new RecentDoctorsInfo() 
+            //{ 
+            //    DoctorsName = "Steven Strange",
+            //    Specialization = "Sorcerer Supreme",
+            //    Location = "177a Bleecker St. | USA"
+            //});
+        }
+
+        public async Task GoToSearchPage()
+        {
+            await Shell.Current.Navigation.PushModalAsync(new TelemedSearchPage(), true);
         }
         #endregion
     }

@@ -110,6 +110,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndroidCustomRenderers\CustomSearchBarRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\FontAwesomeIconRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\RoundedEditorRenderer.cs" />
     <Compile Include="AndroidCustomRenderers\CustomShellRenderer.cs" />

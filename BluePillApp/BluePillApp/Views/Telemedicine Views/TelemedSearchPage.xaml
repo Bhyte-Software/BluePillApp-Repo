@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
+             xmlns:controls="clr-namespace:BluePillApp.Controls"
+             xmlns:renderers="clr-namespace:BluePillApp.CustomRenderers"
+             xmlns:viewModels_Tabs="clr-namespace:BluePillApp.ViewModels.Tabs"
+             xmlns:viewModels="clr-namespace:BluePillApp.ViewModels"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="BluePillApp.Views.TelemedSearchPage">
+    
+    <ContentPage.BindingContext>
+        <viewModels:TelemedSearchPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Doctors Search Result-->
+        <Grid Grid.Row="1">
+            <CollectionView ItemsSource="{Binding SearchResults}">
+
+                <CollectionView.ItemsLayout>
+                    <ListItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="0,5">
+                            <!--Image-->
+                            <Frame BackgroundColor="Black"
+                                   HeightRequest="20"
+                                   WidthRequest="20"
+                                   CornerRadius="100"
+                                   Margin="20,0,0,0"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Center"
+                                   IsClippedToBounds="True">
+
+                                <Image HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Frame>
+
+                            <StackLayout Orientation="Vertical"
+                                         VerticalOptions="Center"
+                                         Spacing="-3">
+                                <!--Fullname-->
+                                <Label Text="{Binding DoctorsName}"
+                                       FontSize="19"
+                                       FontAttributes="Bold"/>
+
+                                <!--Specialization-->
+                                <Label Text="{Binding Specialization}"
+                                       FontSize="14"
+                                       TextColor="LightGray"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <!--Doctors Search Bar-->
+        <Grid Grid.Row="0" ColumnSpacing="0" RowSpacing="0">
+            <pancake:PancakeView BackgroundColor="#0F8DF4"
+                                 HasShadow="True">
+                <Grid>
+                    <!--The SearchBar-->
+                    <renderers:CustomSearchBar x:Name="doctorsSearchBar"
+                               Placeholder="Search Doctors by Name, Specialization"
+                               VerticalOptions="Center"
+                               FontSize="16"
+                               TextColor="Black"
+                               WidthRequest="330"
+                               Text="{Binding SearchedText, Mode=TwoWay}"
+                               SearchCommand="{Binding SearchBarCommand}"
+                               SearchCommandParameter="{Binding Text, Source={x:Reference doctorsSearchBar}}"/>
+                </Grid>
+            </pancake:PancakeView>
+        </Grid>
+    </Grid>
+</ContentPage>

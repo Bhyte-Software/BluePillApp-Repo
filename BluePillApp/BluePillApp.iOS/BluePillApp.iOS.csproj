@@ -60,6 +60,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="iOSCustomRenderers\CustomSearchBarRenderer.cs" />
     <Compile Include="iOSCustomRenderers\RoundedEditorRenderer.cs" />
     <Compile Include="iOSKeyboardHelper.cs" />
     <Compile Include="Main.cs" />

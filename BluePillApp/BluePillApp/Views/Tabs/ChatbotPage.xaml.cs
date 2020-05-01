@@ -17,16 +17,12 @@ namespace BluePillApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChatbotPage : ContentPage
     {
-        ChatbotPageViewModel chatbotpageVM = new ChatbotPageViewModel();
-
         public ChatbotPage()
         {
             InitializeComponent();
 
-            BindingContext = chatbotpageVM;
-
             //Sets the top tab bar invisible
-            Shell.SetTabBarIsVisible(this, false);
+            //Shell.SetTabBarIsVisible(this, false);
         }
     }
 }
