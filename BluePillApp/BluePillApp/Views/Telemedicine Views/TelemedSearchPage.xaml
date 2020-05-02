@@ -24,7 +24,10 @@
 
         <!--Doctors Search Result-->
         <Grid Grid.Row="1">
-            <CollectionView ItemsSource="{Binding SearchResults}">
+            <CollectionView ItemsSource="{Binding SearchResults}"
+                            SelectedItem="{Binding SelectedDoctor}"
+                            SelectionMode="Single"
+                            SelectionChangedCommand="{Binding SelectionCommand}">
 
                 <CollectionView.ItemsLayout>
                     <ListItemsLayout Orientation="Vertical" ItemSpacing="15"/>

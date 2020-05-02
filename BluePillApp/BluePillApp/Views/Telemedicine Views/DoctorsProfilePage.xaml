@@ -7,11 +7,11 @@
              mc:Ignorable="d"
              x:Class="BluePillApp.Views.Telemedicine_Views.DoctorsProfilePage">
 
-    <ContentPage.BindingContext>
-        <teleMedicine:DoctorsProfilePageViewModel/>
-    </ContentPage.BindingContext>
-
-    <Grid BackgroundColor="Green">
-        
+    <Grid>
+        <Label Text="{Binding SelectedDoctor.DoctorsName}"
+               TextColor="Black"
+               FontSize="40"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
     </Grid>
 </ContentPage>

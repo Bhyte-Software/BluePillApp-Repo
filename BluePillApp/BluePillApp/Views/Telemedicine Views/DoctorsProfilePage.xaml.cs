@@ -15,6 +15,8 @@ namespace BluePillApp.Views.Telemedicine_Views
         public DoctorsProfilePage()
         {
             InitializeComponent();
+
+            //Shell.SetTabBarIsVisible(this, false);
         }
     }
 }

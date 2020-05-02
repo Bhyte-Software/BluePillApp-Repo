@@ -23,7 +23,9 @@ namespace BluePillApp.ViewModels.Tabs
         /// Collection of MyDoctorsInfo
         /// </summary>
         public ObservableCollection<MyDoctorsInfo> MyDoctors { get; set; } = new ObservableCollection<MyDoctorsInfo>();
+        #endregion
 
+        #region COMMANDS
         /// <summary>
         /// Command for adding new 
         /// </summary>

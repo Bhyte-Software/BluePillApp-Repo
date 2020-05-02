@@ -1,5 +1,6 @@
 ﻿using BluePillApp.Models;
 using BluePillApp.ViewModels.Base;
+using BluePillApp.ViewModels.Telemedicine;
 using BluePillApp.Views;
 using BluePillApp.Views.Telemedicine_Views;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -33,7 +35,7 @@ namespace BluePillApp.ViewModels
         }
 
         /// <summary>
-        /// 
+        /// This gets the selected/tapped on Doctor
         /// </summary>
         private RecentDoctorsInfo _selectedDoctor;
         public RecentDoctorsInfo SelectedDoctor
@@ -50,16 +52,30 @@ namespace BluePillApp.ViewModels
         /// <summary>
         /// The original collection of Doctors Info
         /// </summary>
-        public ObservableCollection<RecentDoctorsInfo> RecentDoctors { get; set; } = new ObservableCollection<RecentDoctorsInfo>();
+        ObservableCollection<RecentDoctorsInfo> _recentDoctors;
+        public ObservableCollection<RecentDoctorsInfo> RecentDoctors
+        {
+            get { return _recentDoctors; }
+
+            set
+            {
+                _recentDoctors = value;
+                OnPropertyChanged();
+            }
+        }
 
         /// <summary>
         /// The replicated collection of Doctors Info used as search results
         /// </summary>
         public ObservableCollection<RecentDoctorsInfo> SearchResults { get; set; } = new ObservableCollection<RecentDoctorsInfo>();
+
+        INavigation Navigation;
         #endregion
 
         #region COMMANDS
         public ICommand SearchBarCommand { get; set; }
+
+        public ICommand SelectionCommand { get; set; }
         #endregion
 
         /// <summary>
@@ -67,6 +83,10 @@ namespace BluePillApp.ViewModels
         /// </summary>
         public TelemedSearchPageViewModel()
         {
+            SelectionCommand = new RelayCommand(async () => await DisplayDoctor());
+
+            RecentDoctors = new ObservableCollection<RecentDoctorsInfo>();
+
             //RecentDoctorsList
             RecentDoctors.Add(new RecentDoctorsInfo()
             {
@@ -116,6 +136,18 @@ namespace BluePillApp.ViewModels
             {
                 //This removes items when you clean the text from the SearchBar
                 SearchResults.Clear();
+            }
+        }
+
+        public async Task DisplayDoctor()
+        {
+            if (SelectedDoctor != null)
+            {
+                var viewModel = new DoctorsProfilePageViewModel { SelectedDoctor = _selectedDoctor, RecentDoctors = _recentDoctors};
+                var doctorsProfilePage = new DoctorsProfilePage { BindingContext = viewModel };
+
+                await Shell.Current.Navigation.PopModalAsync(false);
+                await Shell.Current.Navigation.PushModalAsync(doctorsProfilePage, true);
             }
         }
 

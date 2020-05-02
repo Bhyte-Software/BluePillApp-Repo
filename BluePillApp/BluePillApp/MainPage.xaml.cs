@@ -1,5 +1,6 @@
 ﻿using BluePillApp.CustomRenderers;
 using BluePillApp.Helpers;
+using BluePillApp.Views.Telemedicine_Views;
 using BottomBar.XamarinForms;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace BluePillApp
 
             //Remove the navigation bar from NavigationPage
             NavigationPage.SetHasNavigationBar(this, false);
+
+            Routing.RegisterRoute("doctorsProfile", typeof(DoctorsProfilePage));
         }
     }
 }
