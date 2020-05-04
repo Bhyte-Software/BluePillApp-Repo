@@ -43,7 +43,7 @@ namespace BluePillApp.Droid.AndroidCustomRenderers
 
         }
 
-        public void SetAppearance(BottomNavigationView bottomView, ShellAppearance appearance)
+        public void SetAppearance(BottomNavigationView bottomView, IShellAppearanceElement appearance)
         {
             bottomView.SetBackgroundColor(Android.Graphics.Color.White);
             bottomView.LabelVisibilityMode = LabelVisibilityMode.LabelVisibilityUnlabeled;

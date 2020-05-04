@@ -118,14 +118,14 @@
                                    VerticalTextAlignment="Center"/>
                         </pancake:PancakeView>
 
-                        <!---->
+                        <!--Payments-->
                         <pancake:PancakeView BackgroundColor="#53D5F4"
                                              HeightRequest="50"
                                              WidthRequest="170"
                                              CornerRadius="20"
                                              xamEffects:TouchEffect.Color="Red">
 
-                            <Label Text="Hmmm"
+                            <Label Text="View your payments and wallet"
                                    TextColor="White"
                                    FontAttributes="Bold"
                                    FontSize="15"

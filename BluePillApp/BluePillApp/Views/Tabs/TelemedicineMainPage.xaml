@@ -62,8 +62,8 @@
                                         HeightRequest="90">
 
                             <CollectionView.ItemsLayout>
-                                <ListItemsLayout Orientation="Horizontal"
-                                                 ItemSpacing="20"/>
+                                <LinearItemsLayout Orientation="Horizontal"
+                                                   ItemSpacing="20"/>
                             </CollectionView.ItemsLayout>
                 
                         <CollectionView.ItemTemplate>

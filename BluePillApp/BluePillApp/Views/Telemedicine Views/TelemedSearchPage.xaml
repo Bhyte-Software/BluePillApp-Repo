@@ -30,7 +30,8 @@
                             SelectionChangedCommand="{Binding SelectionCommand}">
 
                 <CollectionView.ItemsLayout>
-                    <ListItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+                    <LinearItemsLayout Orientation="Vertical" 
+                                       ItemSpacing="15"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
